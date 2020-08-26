@@ -1,6 +1,6 @@
 let events=[]
 
-const eventHub=document.querySelector("container")
+const eventHub=document.querySelector(".container")
 
 export const getEvents=()=>{
     return fetch("http://localhost:8088/events")
