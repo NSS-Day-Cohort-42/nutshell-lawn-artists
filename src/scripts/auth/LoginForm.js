@@ -1,3 +1,5 @@
+import {RegisterForm} from "./RegisterForm.js"
+
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
@@ -25,15 +27,21 @@ eventHub.addEventListener("click", e => {
             })
     }
 })
-
+ eventHub.addEventListener("click", event=>{
+     if (event.target.id==="switch--register"){
+        RegisterForm()
+     }
+ })
 
 const render = () => {
-    contentTarget.innerHTML += `
+    contentTarget.innerHTML = `
         <section class="login">
+        <p>Login</p>
             <input id="login--username" type="text" placeholder="Enter your username">
             <input id="login--password" type="password" placeholder="Enter your password">
 
             <button id="login--button">Log In</button>
+            <button id ="switch--register">Register</button>
         </section>
     `
 }

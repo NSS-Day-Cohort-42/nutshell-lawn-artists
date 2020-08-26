@@ -1,4 +1,6 @@
-const contentTarget = document.querySelector(".auth--register")
+import {LoginForm} from "./LoginForm.js"
+
+const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("userAuthenticated", e => {
@@ -51,16 +53,23 @@ eventHub.addEventListener("click", e => {
     }
 })
 
+eventHub.addEventListener("click", event=>{
+    if (event.target.id==="switch--login"){
+        LoginForm()
+    }
+})
 
 const render = () => {
-    contentTarget.innerHTML += `
+    contentTarget.innerHTML = `
         <section class="register">
+        <p>Register</p>
             <input id="register--username" type="text" placeholder="Enter your username">
             <input id="register--email" type="text" placeholder="Enter your email address">
             <input id="register--password" type="password" placeholder="Enter your password">
             <input id="register--password-verify" type="password" placeholder="Verify your password">
 
             <button id="register--button">Register</button>
+            <button id="switch--login">Login</button>
         </section>
     `
 }
