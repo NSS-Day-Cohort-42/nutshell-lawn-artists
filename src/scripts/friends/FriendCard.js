@@ -6,7 +6,7 @@ export const FriendCard = friend => {
   return `
   <div class="friend-card--${friend.id}">
     ${friendUserName}
-    <button "button-delete-friend--${friend.id}"></button>
+    <button "btn button-delete-friend--${friend.id}"></button>
   </div>
   `
 }
