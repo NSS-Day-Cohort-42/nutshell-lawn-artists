@@ -5,7 +5,8 @@ let friends = []
 export const useFriends = () => friends.slice()
 
 export const useFriendsByUserId = userId => {
-  return friends.filter( f => f.id === userId)
+  userId = parseInt(userId)
+  return friends.filter( f => f.userID === userId)
 }
 
 export const getFriends = () => {

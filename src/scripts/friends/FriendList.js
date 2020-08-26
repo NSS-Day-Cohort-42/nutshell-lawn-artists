@@ -12,5 +12,5 @@ export const ListFriends = () => {
 
 const render = () => {
   const userFriends = useFriendsByUserId(sessionStorage.activeUser)
-  contentTarget.innerHTML = userFriends.map( f => FriendCard(f))
+  contentTarget.innerHTML = userFriends.map( f => FriendCard(f)).join("")
 }
