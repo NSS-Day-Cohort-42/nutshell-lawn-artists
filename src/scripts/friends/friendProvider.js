@@ -1,5 +1,5 @@
 const eventHub = document.querySelector(".container")
-const friendChange = new CustomEvent("friendChange")
+
 let friends = []
 
 export const useFriends = () => friends.slice()
@@ -28,9 +28,15 @@ export const saveFriend = friendData => {
     .then(dispatchChangeEvent)
 }
 
+export const deleteFriend = friendId => {
+  return fetch(`http://localhost:8088/friends/${friendId}`, {
+    method: "DELETE",
+  })
+    .then(getFriends)
+    .then(dispatchChangeEvent)
+}
 
-
-const dispatchChangeEvent = () => eventHub.dispatchEvent(friendChange)
-
-
-//Rename File
+const dispatchChangeEvent = () => {
+  const friendChange = new CustomEvent("friendChange")
+  eventHub.dispatchEvent(friendChange)
+}
