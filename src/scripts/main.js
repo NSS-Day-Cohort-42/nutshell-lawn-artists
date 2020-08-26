@@ -1,6 +1,7 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { Nutshell } from "./Nutshell.js"
 LoginForm()
+Nutshell()
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
