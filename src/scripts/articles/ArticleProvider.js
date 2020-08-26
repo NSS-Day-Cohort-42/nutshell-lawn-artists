@@ -1,6 +1,6 @@
 let articles = []
 
-const eventHub = document.querySelector(".news-container")
+const eventHub = document.querySelector(".container")
 
 const dispatchArticlesStateChangeEvent = () => {
     const articlesStateChangedEvent = new CustomEvent("articlesStateChanged")
