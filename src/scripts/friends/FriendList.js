@@ -1,4 +1,4 @@
-import { getFriends, useFriendsByUserId } from "./friendProvider.js"
+import { getFriends, useFriendsByUserId } from "./FriendProvider.js"
 import { getUsers } from "../users/UserProvider.js"
 import { FriendCard } from "./FriendCard.js"
 const eventHub = document.querySelector(".container")
