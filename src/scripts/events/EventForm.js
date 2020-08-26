@@ -1,10 +1,12 @@
 import {saveEvent} from "./EventProvider.js"
 
 const eventHub=document.querySelector(".container")
-const contentTarget=document.querySelector(".event-button")
+const buttonTarget=document.querySelector(".event-button")
+const contentTarget=document.querySelector(".popup-container")
 
 export const eventForm=()=>{
-    contentTarget.innerHTML=`<button id="eventBtn" class="btn">New event</button>
+    buttonTarget.innerHTML=`<button id="eventBtn" class="btn">New event</button>`
+    contentTarget.innerHTML=`
     <div id="event--form" class="event--mobal" />
     <div class="event--form__content">
     <p>Name of event:</p>
