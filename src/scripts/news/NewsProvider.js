@@ -23,6 +23,19 @@ export const saveArticle = (article) => {
       .then(dispatchNewsStateChangeEvent)
 }
 
+export const deleteArticle = (articleId) => {
+  return fetch(`http://localhost:8088/articles/${ articleId }`, {
+      method: "DELETE"
+  })
+  .then(getNews)
+    .then(dispatchNewsStateChangeEvent)
+      .catch(
+        (error) => {
+          console.log(error)
+        }
+      )
+}
+
 export const useNews = () => {
   return articles.slice()
 }
