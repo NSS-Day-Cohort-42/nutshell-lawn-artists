@@ -4,7 +4,7 @@ const eventHub=document.querySelector(".container")
 
 export const getEvents=()=>{
     return fetch("http://localhost:8088/events")
-    .then(response=respons.json())
+    .then(response => response.json())
     .then(event=>events=event)
 }
 
@@ -19,9 +19,9 @@ fetch("http://localhost:8088/events",{
         "Content-Type": "application/json"
     },
     body: JSON.stringify(eventObj)
-    .then(getEvents)
-    .then(dispatchStateChangeEvent)
 })
+.then(getEvents)
+    .then(dispatchStateChangeEvent)
 }
 
 export const deleteEvent=(id)=>{
