@@ -9,6 +9,12 @@ export const useFriendsByUserId = userId => {
   return friends.filter( f => f.userID === userId)
 }
 
+export const isFriendOfCurrentUser = userId => {
+  userFriends = sessionStorage.activeUser
+  return userFriends.some( f => f.following === userId )
+}
+
+
 export const getFriends = () => {
   return fetch("http://localhost:8088/friends")
     .then(res => res.json())
