@@ -1,28 +1,31 @@
 import {saveEvent} from "./EventProvider.js"
 
 const eventHub=document.querySelector(".container")
-const contentTarget=document.querySelector(".event-container")
+const contentTarget=document.querySelector(".event-button")
 
 export const eventForm=()=>{
-    contentTarget.innerHTML=`
-    <input id="event--name" type="text" placeholder="please enter the name of the event">
-    <input id="event--date" type="date" placeholder="please enter the date of the event">
-    <input id="event--location" type="text" placeholder="please enter the location of the event">
-    <button id="submit--event">submit</button>
-    `
+    contentTarget.innerHTML=`<button class="btn" id="create--event">New event</button>`
 }
 
 eventHub.addEventListener("click", event=>{
-    if(event.target.id==="submit--event"){
-        const eventName=document.querySelector("#event--name")
-        const eventDate=document.querySelector("#event--date")
-        const eventLocation=document.querySelector("#event--location")
-        const eventObject={
-            "userId":parseInt(sessionStorage.getItem("activeUser")),
-            "name":eventName.value,
-            "date":eventDate.value,
-            "location":eventLocation.value
+    if(event.target.id==="create--event"){
+        const eventName=prompt("please enter the name of the event")
+        const eventDate=prompt("please enter the date of the event","MM/DD/YYYY")
+        const eventLocation=prompt("please enter the locatoin of the event")
+        if(eventName===null||eventName===""){
+            alert("Failed to enter an event name")
+        }else if(eventDate===null||eventDate==="MM/DD/YYYY"){
+            alert("Failed to enter an event date")
+        }else if(eventLocation===null||eventLocation===""){
+            alert("Failed to enter an event location")
+        }else{
+            const eventObject={
+                "userId":parseInt(sessionStorage.getItem("activeUser")),
+                "name":eventName,
+                "date":eventDate,
+                "location":eventLocation
+            }
+            saveEvent(eventObject)
         }
-        saveEvent(eventObject)
     }
 })
