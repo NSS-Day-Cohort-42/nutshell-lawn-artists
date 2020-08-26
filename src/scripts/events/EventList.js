@@ -1,1 +1,1 @@
-import {}
+import {getEvent, useEvent} from "./EventProvider.js"

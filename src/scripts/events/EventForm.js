@@ -16,13 +16,13 @@ eventHub.addEventListener("click", event=>{
     if(event.target.id==="submit--event"){
         const eventName=document.querySelector("#event--name")
         const eventDate=document.querySelector("#event--date")
-        const eventLocation=document.querySelector("event--location")
-        const eventobject={
-            "userId":sessionStorage.getItem("activeUser"),
+        const eventLocation=document.querySelector("#event--location")
+        const eventObject={
+            "userId":parseInt(sessionStorage.getItem("activeUser")),
             "name":eventName.value,
             "date":eventDate.value,
             "location":eventLocation.value
         }
-        
+        saveEvent(eventObject)
     }
 })
