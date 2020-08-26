@@ -2,10 +2,10 @@ let articles = []
 
 const eventHub = document.querySelector(".main")
 
-const dispatchNewsStateChangeEvent = () => {
-    const newsStateChangedEvent = new CustomEvent("newsStateChanged")
+const dispatchArticlesStateChangeEvent = () => {
+    const articlesStateChangedEvent = new CustomEvent("articlesStateChanged")
 
-    eventHub.dispatchEvent(newsStateChangedEvent)
+    eventHub.dispatchEvent(articlesStateChangedEvent)
 }
 
 export const saveArticle = (article) => {
@@ -19,16 +19,16 @@ export const saveArticle = (article) => {
     },
     body: jsonNote
   })
-    .then(getNews)
-      .then(dispatchNewsStateChangeEvent)
+    .then(getArticles)
+      .then(dispatchArticlesStateChangeEvent)
 }
 
 export const deleteArticle = (articleId) => {
   return fetch(`http://localhost:8088/articles/${ articleId }`, {
       method: "DELETE"
   })
-  .then(getNews)
-    .then(dispatchNewsStateChangeEvent)
+  .then(getArticles)
+    .then(dispatchArticlesStateChangeEvent)
       .catch(
         (error) => {
           console.log(error)
@@ -36,14 +36,14 @@ export const deleteArticle = (articleId) => {
       )
 }
 
-export const useNews = () => {
+export const useArticles = () => {
   return articles.slice()
 }
 
-export const getNews = () => {
+export const getArticles = () => {
   return fetch('http://localhost:8088/articles')
     .then(response => response.json())
-      .then(parsedNews => {
-        articles = parsedNews
+      .then(parsedArticles => {
+        articles = parsedArticles
       })
 }
