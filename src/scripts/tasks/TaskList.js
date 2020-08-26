@@ -1,5 +1,6 @@
 import { TaskCardHTML } from "./TaskCard.js";
 import { useTasks, getTasks } from "./TaskProvider.js";
+import { getUsers } from "../users/UserProvider.js";
 
 
 const contentTarget = document.querySelector(".task-container")
@@ -11,6 +12,8 @@ eventHub.addEventListener("taskStateChanged", () => {
 
 
 const render = (taskArray) => {
+    const userTasks = 
+
     contentTarget.innerHTML = `
     <section class="taskList">
     ${
@@ -23,9 +26,7 @@ const render = (taskArray) => {
 }
 
 export const TaskList = () => {
-    getTasks()
-    .then(() => {
-        const allTasks = useTasks()
-        render(allTasks)
-    })
+    getUsers()
+    .then(getTasks)
+    .then(() => render())
 }
