@@ -1,8 +1,15 @@
-const { isFriendOfCurrentUser } = require("./friendProvider")
+import { isFriendOfCurrentUser } from "./FriendProvider.js"
 
 const contentTarget = document.querySelector(".popup-container")
+const eventHub = document.querySelector(".container")
+
+
+eventHub.addEventListener("friendAction", customEvent => {
+  render(customEvent.detail.userId)
+})
 
 const render = targetUserID => {
+
   if (isFriendOfCurrentUser(targetUserID)) {
     contentTarget.innerHTML = `
     <button class="btn remove-friend--${targetUserID}">Remove Friend</button>

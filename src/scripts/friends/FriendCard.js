@@ -1,5 +1,20 @@
 import { findUserByUserId } from "../users/UserProvider.js"
 
+const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id.startsWith("button-friend-action")) {
+    const [ prefix, friendUserID] = clickEvent.target.id.split("--")
+
+    const friendAction = new CustomEvent("friendAction", {
+      detail: {
+        userId: parseInt(friendUserID)
+      }
+    })
+    
+    eventHub.dispatchEvent(friendAction)
+  }
+})
 
 export const FriendCard = friend => {
 
@@ -7,7 +22,7 @@ export const FriendCard = friend => {
   return `
   <div class="friend-card--${friend.following}">
     ${friendUserName}
-    <button "btn button-friend-action--${friend.following}">[X]</button>
+    <button class="btn" id="button-friend-action--${friend.following}">[X]</button>
   </div>
   `
 

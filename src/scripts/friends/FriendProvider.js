@@ -10,7 +10,8 @@ export const useFriendsByUserId = userId => {
 }
 
 export const isFriendOfCurrentUser = userId => {
-  userFriends = sessionStorage.activeUser
+  const currentUserID = parseInt(sessionStorage.activeUser)
+  const userFriends = useFriendsByUserId(currentUserID)
   return userFriends.some( f => f.following === userId )
 }
 
