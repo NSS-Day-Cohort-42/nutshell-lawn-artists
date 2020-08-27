@@ -1,4 +1,4 @@
-import { getArticles, useArticles } from "./Articleprovider.js"
+import { getArticles, useArticles } from "./ArticleProvider.js"
 import { getUsers } from "../users/UserProvider.js"
 import { ArticleCard } from "./ArticleCard.js"
 const eventHub = document.querySelector(".container")
