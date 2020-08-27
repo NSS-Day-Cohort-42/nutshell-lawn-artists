@@ -1,12 +1,14 @@
 import {getEvents, useEvents} from "./EventProvider.js"
 import {eventHTML} from "./EventCard.js"
-import {useFriendsByUserId} from "../friends/FriendProvider.js"
+import {useFriendsByUserId, getFriends} from "../friends/FriendProvider.js"
 
 const contentTarget=document.querySelector(".event-container")
 export const eventList=()=>{
     getEvents()
+    .then(getFriends())
     .then(()=>{
         const friendsArray=useFriendsByUserId(parseInt(sessionStorage.getItem("activeUser")))
+        console.log(friendsArray)
         let eventArray=useEvents()
         eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
