@@ -1,6 +1,7 @@
 import { findUserByUserId } from "../users/UserProvider.js"
 
 const eventHub = document.querySelector(".container")
+const currentUserId = parseInt(sessionStorage.activeUser)
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("button-friend-action")) {
@@ -16,13 +17,20 @@ eventHub.addEventListener("click", clickEvent => {
   }
 })
 
-export const FriendCard = friendUserId => {
+export const FriendCard = userId => {
 
-  const friendUserName = findUserByUserId(friendUserId).username
+  const friendUserName = findUserByUserId(userId).username
+
+  let button = ''
+  
+  if (userId !== currentUserId) {
+    button = `<button class="btn" id="button-friend-action--${userId}">[X]</button>`
+  }
+
   return `
-  <div class="friend-card--${friendUserId}">
+  <div class="friend-card--${userId}">
     ${friendUserName}
-    <button class="btn" id="button-friend-action--${friendUserId}">[X]</button>
+    ${button}
   </div>
   `
 

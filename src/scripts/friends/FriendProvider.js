@@ -24,6 +24,8 @@ export const getFriends = () => {
 }
 
 export const addFriend = userId => {
+  userId = parseInt(userId)
+
   const friend = {
     userID: currentUserId,
     following: userId
