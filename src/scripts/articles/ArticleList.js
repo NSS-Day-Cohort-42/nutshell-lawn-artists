@@ -20,7 +20,7 @@ export const ListArticles = () => {
 export const renderArticles = () => {
 
   createArticleButton.innerHTML += `
-  <button class="btn btn-create-article">Create Article</button>
+  <button class="btn btn-create-article" id="createArticleBtn">Create Article</button>
   `
   const articles = useArticles()
   articleListTarget.innerHTML = articles.map( a => ArticleCard(a)).join("")

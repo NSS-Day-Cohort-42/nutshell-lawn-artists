@@ -1,11 +1,11 @@
 import { saveArticle, getArticles } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".popup-container")
+const popup = document.querySelector(".popup-container")
 
-eventHub.addEventListener("click", clickEvent => {
-  if(clickEvent.target.classList.contains("btn-save-art")) {
+eventHub.addEventListener("click", e => {
 
+  if(e.target.classList.contains("btn-save-art")) {
     const articleTitle = document.querySelector(".art-title")
     const articleSynopsis = document.querySelector(".art-synopsis")
     const articleUrl = document.querySelector(".art-url")
@@ -19,10 +19,15 @@ eventHub.addEventListener("click", clickEvent => {
 
     saveArticle(newArticle)
       .then(ArticleForm)
+  }
+  else if (e.target.classList.contains("btn-close-form")) {
+    popup.classList.remove("visible")
+  }
 
-    } else if (clickEvent.target.classList.contains("btn-create-article")) {
-      ArticleForm()
-    }
+  else if (e.target.id === "createArticleBtn") {
+    popup.classList.add("visible")
+    renderArticleForm()
+  }
 })
 
 export const ArticleForm = () => {
@@ -33,9 +38,8 @@ export const ArticleForm = () => {
 }
 
 const renderArticleForm = () => {
-    contentTarget.classList.add("visible")
 
-    contentTarget.innerHTML =  `
+  popup.innerHTML = `
     <section class="form-create-art">
         <input type="text" class="art-title" id="articleTitle" placeholder="Article title"></input>
         <input type="text" class="art-synopsis" id="articleSynopsis" placeholder="Article Synopsis"></input>
@@ -43,5 +47,5 @@ const renderArticleForm = () => {
         <button class="btn btn-save-art" id="saveArticle">Save Article</button>
         <button class="btn btn-close-form" id="closeForm">Cancel</button>
     </section>
-        `
+    `
 }
