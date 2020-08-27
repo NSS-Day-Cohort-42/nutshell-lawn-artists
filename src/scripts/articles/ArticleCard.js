@@ -25,6 +25,9 @@ export const ArticleEditButton = ( articleEntry ) => {
     </button>
     `
   }
+  else{
+    return ``
+  }
 }
 
 eventHub.addEventListener("click", e => {
