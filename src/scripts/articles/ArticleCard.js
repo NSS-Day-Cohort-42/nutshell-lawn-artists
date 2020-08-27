@@ -1,5 +1,3 @@
-import { EditArticleForm } from "./ArticleForm.js"
-import { getSingleArticle } from "./ArticleProvider.js"
 
 const eventHub = document.querySelector(".container")
 
@@ -31,10 +29,5 @@ export const ArticleEditButton = ( articleEntry ) => {
 }
 
 eventHub.addEventListener("click", e => {
-  if (e.target.id.startsWith( "art-edit--")) {
-    const articleId = e.target.id.split("--")[1]
-
-      getSingleArticle(articleId)
-        .then(articleObj => EditArticleForm(articleObj))
-  }
-})
+  //listens for click event on edit article button and opens pop-up box with edit form
+  })
