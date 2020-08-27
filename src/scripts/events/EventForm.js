@@ -1,7 +1,7 @@
 import {saveEvent} from "./EventProvider.js"
 
 const eventHub=document.querySelector(".container")
-const buttonTarget=document.querySelector(".event-button")
+const buttonTarget=document.querySelector(".create-container")
 const contentTarget=document.querySelector(".popup-container")
 
 export const eventForm=()=>{
