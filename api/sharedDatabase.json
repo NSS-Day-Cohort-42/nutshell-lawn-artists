@@ -105,57 +105,10 @@
     }
   ],
   "friends": [
-    
     {
       "id": 3,
       "userID": 1,
       "following": 4
-    },
-    {
-      "userID": null,
-      "following": 1,
-      "id": 4
-    },
-    {
-      "userID": null,
-      "following": 2,
-      "id": 5
-    }
-  ],
-  "messages": []
-}
-{
-  "users": [
-    {
-      "username": "gib",
-      "email": "a@a.a",
-      "password": "a",
-      "id": 1
-    },
-    {
-      "username": "imaginaryFriend",
-      "email": "a@a.a",
-      "password": "a",
-      "id": 2
-    },
-    {
-      "username": "oldFriend",
-      "email": "a@a.a",
-      "password": "a",
-      "id": 3
-    },
-    {
-      "username": "newFriend",
-      "email": "a@a.a",
-      "password": "a",
-      "id": 4
-    }
-  ],
-  "friends": [
-    {
-      "id": 1,
-      "userID": 1,
-      "following": 2
     },
     {
       "id": 2,
@@ -166,21 +119,7 @@
       "id": 3,
       "userID": 1,
       "following": 4
-    },
-    {
-      "userID": null,
-      "following": "4",
-      "id": 4
-    },
-    {
-      "userID": null,
-      "following": "4",
-      "id": 5
-    },
-    {
-      "userID": null,
-      "following": "2",
-      "id": 6
     }
-  ]
+  ],
+  "messages": []
 }
