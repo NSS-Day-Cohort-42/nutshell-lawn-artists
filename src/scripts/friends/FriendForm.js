@@ -12,7 +12,19 @@ eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "cancel-friend-change") {
     contentTarget.classList.remove("visible")
   }
+  else if (clickEvent.target.id.startsWith("remove-friend")) {
+    const [prefix, unfriendUserId] = clickEvent.target.id.split("--")
+    //TODO: unfriend this user
+    contentTarget.classList.remove("visible")
+  }
+  else if (clickEvent.target.id.startsWith("add-friend")) {
+    const [prefix, addFriendUserID] = clickEvent.target.id.split("--")
+    //TODO: add friendship to this user
+    contentTarget.classList.remove("visible")
+  }
+
 })
+
 
 const render = targetUserID => {
 
