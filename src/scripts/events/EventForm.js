@@ -23,7 +23,6 @@ export const eventForm=()=>{
 eventHub.addEventListener("click", event=>{
     const mobal=document.querySelector(".popup-container")
     window.onclick=(windowEvent)=>{
-        console.log(windowEvent)
         if(windowEvent.target.id===""&&windowEvent.target.localName!=="p"){
             mobal.style.display="none"    
         }
@@ -39,7 +38,6 @@ eventHub.addEventListener("click", event=>{
         const eventName=document.querySelector("#eventName").value
         const eventDate=document.querySelector("#eventDate").value
         const eventLocation=document.querySelector("#eventLocation").value
-        console.log(document.querySelector("#eventDate"))
         if(eventName===""){
             alert("Failed to enter an event name")
         }else if(eventDate===""){
