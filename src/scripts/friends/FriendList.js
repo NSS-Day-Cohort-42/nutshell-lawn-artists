@@ -14,5 +14,4 @@ const render = () => {
   const userFriends = useFriendsByUserId(sessionStorage.activeUser)
   const userFriendIds = userFriends.map(f => f.following)
   contentTarget.innerHTML = userFriendIds.map( f => FriendCard(f)).join("")
-  contentTarget.innerHTML += FriendCard(1)
 }
