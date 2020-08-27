@@ -8,6 +8,13 @@ eventHub.addEventListener("friendAction", customEvent => {
   render(customEvent.detail.userId)
 })
 
+eventHub.addEventListener("click", clickEvent => {
+  debugger
+  if (clickEvent.target.classList.contains("cancel-friend-change")) {
+    contentTarget.classList.remove("visible")
+  }
+})
+
 const render = targetUserID => {
 
   if (isFriendOfCurrentUser(targetUserID)) {

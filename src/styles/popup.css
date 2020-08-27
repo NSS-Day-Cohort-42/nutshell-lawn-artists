@@ -1,5 +1,6 @@
 .popup-container {
   visibility: hidden;
+  border: solid black 3px;
 }
 
 .visible {
