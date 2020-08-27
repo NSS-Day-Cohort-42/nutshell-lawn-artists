@@ -19,11 +19,8 @@ eventHub.addEventListener("click", clickEvent => {
 
     saveArticle(newArticle)
       .then(ArticleForm)
-    } else if (clickEvent.target.id === "closeArticle") {
-        const modal = document.querySelector(".taskForm")
-        modal.style.display = "none"
 
-    } else if (clickEvent.target.id === "createTask") {
+    } else if (clickEvent.target.classList.contains("btn-create-article")) {
       ArticleForm()
     }
 })
@@ -31,13 +28,15 @@ eventHub.addEventListener("click", clickEvent => {
 export const ArticleForm = () => {
   getArticles()
     .then(() => {
-        render()
+        renderArticleForm()
     })
 }
 
 const renderArticleForm = () => {
+    contentTarget.classList.add("visible")
+
     contentTarget.innerHTML =  `
-    <section class="taskForm">
+    <section class="form-create-art">
         <input type="text" class="art-title" id="articleTitle" placeholder="Article title"></input>
         <input type="text" class="art-synopsis" id="articleSynopsis" placeholder="Article Synopsis"></input>
         <input type="url" class="art-url" id="articleUrl" placeholder="Article URL"></input>
