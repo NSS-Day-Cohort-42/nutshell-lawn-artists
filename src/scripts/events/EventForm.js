@@ -6,7 +6,20 @@ const contentTarget=document.querySelector(".popup-container")
 
 export const eventForm=()=>{
     buttonTarget.innerHTML+=`<button id="eventBtn" class="btn">New event</button>`
-    contentTarget.innerHTML=`
+}
+
+eventHub.addEventListener("click", event=>{
+    const modal=document.querySelector(".popup-container")
+    /*
+    was a possible way to get the modal to close did not work
+    window.onclick=(windowEvent)=>{
+        console.log(windowEvent)
+        if(windowEvent.target.id===""&&windowEvent.target.localName!=="p"){
+            modal.style.display="none"    
+        }
+    }*/
+    if(event.target.id==="eventBtn"){
+        contentTarget.innerHTML=`
     <div id="event--form__content" class="event--form__content">
     <p>Name of event:</p>
     <input type="text" class="event--form__input" id="eventName">
@@ -18,22 +31,10 @@ export const eventForm=()=>{
     <button id="create--event">submit</button>
     </div>
     `
-}
-
-eventHub.addEventListener("click", event=>{
-    const modal=document.querySelector(".popup-container")
-    window.onclick=(windowEvent)=>{
-        console.log(windowEvent)
-        if(windowEvent.target.id===""&&windowEvent.target.localName!=="p"){
-            modal.style.display="none"    
-        }
-    }
-    if(event.target.id==="eventBtn"){
-        modal.style.display="block"
+    contentTarget.classList.add("visible")
     }else if(event.target.id=="event--form__close"){
-        modal.style.display="none"
-    }else if(event.target.id==="window"){
-        modal.style.display="none"
+        contentTarget.classList.remove("visible")
+        contentTarget.innerHTML=""
     }
     else if(event.target.id==="create--event"){
         const eventName=document.querySelector("#eventName").value
