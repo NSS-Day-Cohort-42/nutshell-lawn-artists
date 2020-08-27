@@ -1,4 +1,4 @@
-import { isFriendOfCurrentUser } from "./FriendProvider.js"
+import { isFriendOfCurrentUser, deleteFriend, addFriend } from "./FriendProvider.js"
 
 const contentTarget = document.querySelector(".popup-container")
 const eventHub = document.querySelector(".container")
@@ -14,12 +14,12 @@ eventHub.addEventListener("click", clickEvent => {
   }
   else if (clickEvent.target.id.startsWith("remove-friend")) {
     const [prefix, unfriendUserId] = clickEvent.target.id.split("--")
-    //TODO: unfriend this user
-    contentTarget.classList.remove("visible")
+    deleteFriend(unfriendUserId)
+      .then( () => contentTarget.classList.remove("visible") )
   }
   else if (clickEvent.target.id.startsWith("add-friend")) {
     const [prefix, addFriendUserID] = clickEvent.target.id.split("--")
-    //TODO: add friendship to this user
+    addFriend(addFriendUserID)
     contentTarget.classList.remove("visible")
   }
 
