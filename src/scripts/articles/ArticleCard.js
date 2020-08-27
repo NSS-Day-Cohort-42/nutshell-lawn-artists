@@ -1,4 +1,8 @@
+import { EditArticleForm } from "./ArticleForm.js"
+import { getSingleArticle } from "./ArticleProvider.js"
+
 const eventHub = document.querySelector(".container")
+
 export const ArticleCard = ( articleEntry ) => {
   return `
     <section class="art--${ articleEntry.id }
@@ -24,13 +28,10 @@ export const ArticleEditButton = ( articleEntry ) => {
 }
 
 eventHub.addEventListener("click", e => {
-  if (e.target.id.startsWith( "art-edit--") {
-    const [_, articleIdString ] = clickEvent.target.id.split("--")
+  if (e.target.id.startsWith( "art-edit--")) {
+    const articleId = e.target.id.split("--")[1]
 
-      editArticle()
-    }
-})
-      const customEvent = new CustomEvent("editArticleClicked",)
-      eventHub.dispatchEvent(customEvent)
+      getSingleArticle(articleId)
+        .then(articleObj => EditArticleForm(articleObj))
   }
 })
