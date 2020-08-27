@@ -1,4 +1,4 @@
-import { saveTask, useTasks, getTasks } from "./TaskProvider.js";
+import { saveTask, getTasks } from "./TaskProvider.js";
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".popup-container")

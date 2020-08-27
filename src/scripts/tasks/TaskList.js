@@ -13,16 +13,22 @@ eventHub.addEventListener("taskStateChanged", () => {
 
 
 const render = () => {
+    const userTasks = useTasks().filter((task) => {
+        if(parseInt(sessionStorage.activeUser) === task.userId) {
+            return true
+        } else {
+            return false
+        }
+    })
     createTaskTarget.innerHTML = `<button id="createTask">Create Task</button>`
-    const userTasks = useTasks(sessionStorage.activeUser)
 
     contentTarget.innerHTML = `
     <section class="taskList">
-    ${
-        userTasks.map(taskObj => {
-            return TaskCardHTML(taskObj)
-        }).reverse().join("")
-    }
+        ${
+            userTasks.map(taskObj => {
+                return TaskCardHTML(taskObj)
+            }).reverse().join("")
+        }
     </section>
     `
 }
@@ -30,5 +36,7 @@ const render = () => {
 export const TaskList = () => {
     getUsers()
     .then(getTasks)
-    .then(() => render())
+    .then(render)
+    
 }
+// task.userId === sessionStorage.getItem("activeUser")
