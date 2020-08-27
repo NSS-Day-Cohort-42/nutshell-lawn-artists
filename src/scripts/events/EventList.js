@@ -6,7 +6,7 @@ const contentTarget=document.querySelector(".event-container")
 export const eventList=()=>{
     getEvents()
     .then(()=>{
-        const freindsArray=useFriendsByUserId(parseInt(sessionStorage.getItem("activeUser")))
+        const friendsArray=useFriendsByUserId(parseInt(sessionStorage.getItem("activeUser")))
         let eventArray=useEvents()
         eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
@@ -17,7 +17,10 @@ export const eventList=()=>{
             console.log(secondObj.date-firstObj.date)
             return secondObj.date-firstObj.date
         }).reverse()
-        const correctEvents=eventsSortedByDate.filter(eventObj=>eventObj.userId===parseInt(sessionStorage.getItem("activeUser")))
+        const correctEvents=friendsArray.map(friendObj=>{
+            const currentevent=eventsSortedByDate.filter(eventObj=>eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))||eventObj.userId===friendObj.following)
+            return currentevent
+        })
         contentTarget.innerHTML=correctEvents.map(eventObj=>eventHTML(eventObj)).join("")
 })
 }
