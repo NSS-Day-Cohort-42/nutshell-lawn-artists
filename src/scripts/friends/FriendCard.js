@@ -4,11 +4,11 @@ const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("button-friend-action")) {
-    const [ prefix, friendUserID] = clickEvent.target.id.split("--")
+    const [ prefix, friendUserId] = clickEvent.target.id.split("--")
 
     const friendAction = new CustomEvent("friendAction", {
       detail: {
-        userId: parseInt(friendUserID)
+        userId: parseInt(friendUserId)
       }
     })
     
@@ -16,13 +16,13 @@ eventHub.addEventListener("click", clickEvent => {
   }
 })
 
-export const FriendCard = friend => {
+export const FriendCard = friendUserId => {
 
-  const friendUserName = findUserByUserId(friend.following).username
+  const friendUserName = findUserByUserId(friendUserId).username
   return `
-  <div class="friend-card--${friend.following}">
+  <div class="friend-card--${friendUserId}">
     ${friendUserName}
-    <button class="btn" id="button-friend-action--${friend.following}">[X]</button>
+    <button class="btn" id="button-friend-action--${friendUserId}">[X]</button>
   </div>
   `
 

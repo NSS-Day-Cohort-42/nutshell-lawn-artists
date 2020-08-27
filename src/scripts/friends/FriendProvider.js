@@ -32,7 +32,6 @@ export const addFriend = userId => {
 }
 
 export const deleteFriend = userId => {
-  debugger
   userId = parseInt(userId)
   const friendId = useFriendsByUserId(currentUserId).find(f => f.following === userId).id
   return fetch(`http://localhost:8088/friends/${friendId}`, {
