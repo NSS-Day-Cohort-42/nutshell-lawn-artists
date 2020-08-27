@@ -23,6 +23,7 @@ eventHub.addEventListener("click", clickEvent => {
         modal.style.display = "none"
 
     } else if (clickEvent.target.id === "createTask") {
+        contentTarget.classList.add("visible")
         TaskForm()
     } 
 })
