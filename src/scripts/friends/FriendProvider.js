@@ -1,5 +1,4 @@
 const eventHub = document.querySelector(".container")
-const currentUserId = parseInt(sessionStorage.activeUser)
 
 let friends = []
 
@@ -11,6 +10,7 @@ export const useFriendsByUserId = userId => {
 }
 
 export const isFriendOfCurrentUser = userId => {
+  const currentUserId = parseInt(sessionStorage.activeUser)
   userId = parseInt(userId)
   const userFriends = useFriendsByUserId(currentUserId)
   return userFriends.some( f => f.following === userId )
@@ -24,8 +24,8 @@ export const getFriends = () => {
 }
 
 export const addFriend = userId => {
+  const currentUserId = parseInt(sessionStorage.activeUser)
   userId = parseInt(userId)
-
   const friend = {
     userID: currentUserId,
     following: userId
@@ -34,6 +34,7 @@ export const addFriend = userId => {
 }
 
 export const deleteFriend = userId => {
+  const currentUserId = parseInt(sessionStorage.activeUser)
   userId = parseInt(userId)
   const friendId = useFriendsByUserId(currentUserId).find(f => f.following === userId).id
   return fetch(`http://localhost:8088/friends/${friendId}`, {
