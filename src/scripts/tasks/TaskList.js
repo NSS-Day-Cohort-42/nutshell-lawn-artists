@@ -20,7 +20,7 @@ const render = () => {
             return false
         }
     })
-    createTaskTarget.innerHTML = `<button id="createTask">Create Task</button>`
+    createTaskTarget.innerHTML += `<button id="createTask">Create Task</button>`
 
     contentTarget.innerHTML = `
     <section class="taskList">
