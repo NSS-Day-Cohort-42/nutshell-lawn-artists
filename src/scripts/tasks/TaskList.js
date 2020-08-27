@@ -5,19 +5,21 @@ import { getUsers } from "../users/UserProvider.js";
 
 const contentTarget = document.querySelector(".task-container")
 const eventHub = document.querySelector(".container")
+const createTaskTarget = document.querySelector(".create-container")
 
 eventHub.addEventListener("taskStateChanged", () => {
     TaskList()
 })
 
 
-const render = (taskArray) => {
-    const userTasks = 
+const render = () => {
+    createTaskTarget.innerHTML = `<button id="createTask">Create Task</button>`
+    const userTasks = useTasks(sessionStorage.activeUser)
 
     contentTarget.innerHTML = `
     <section class="taskList">
     ${
-        taskArray.map(taskObj => {
+        userTasks.map(taskObj => {
             return TaskCardHTML(taskObj)
         }).reverse().join("")
     }
