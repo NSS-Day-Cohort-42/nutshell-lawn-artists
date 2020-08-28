@@ -1,4 +1,4 @@
-import { FriendCard } from "../friends/FriendCard"
+import { FriendCard } from "../friends/FriendCard.js"
 
 export const MessageCard = message => {
   

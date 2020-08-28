@@ -121,5 +121,11 @@
       "following": 4
     }
   ],
-  "messages": []
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "Greetings"
+    }
+  ]
 }
