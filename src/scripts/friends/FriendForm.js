@@ -1,4 +1,5 @@
 import { isFriendOfCurrentUser, deleteFriend, addFriend } from "./FriendProvider.js"
+import { findUserByUserId } from "../users/UserProvider.js"
 
 const contentTarget = document.querySelector(".popup-container")
 const eventHub = document.querySelector(".container")
@@ -27,15 +28,19 @@ eventHub.addEventListener("click", clickEvent => {
 
 
 const render = targetUserID => {
-
+  const targetUser = findUserByUserId(targetUserID)
+  contentTarget.innerHTML = `
+  <div class ="selected-friend">${targetUser.username}</div>
+  `
+  
   if (isFriendOfCurrentUser(targetUserID)) {
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
     <button class="btn" id="remove-friend--${targetUserID}">Remove Friend</button>
     <button class="btn" id="cancel-friend-change">Cancel</button>
   `
   }
   else {
-    contentTarget.innerHTML = `
+    contentTarget.innerHTML += `
     <button class="btn" id="add-friend--${targetUserID}">Add Friend</button>
     <button class="btn" id="cancel-friend-change">Cancel</button>
   `

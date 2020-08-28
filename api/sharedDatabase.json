@@ -120,11 +120,6 @@
   ],
   "friends": [
     {
-      "id": 3,
-      "userID": 1,
-      "following": 4
-    },
-    {
       "id": 2,
       "userID": 1,
       "following": 3
@@ -135,5 +130,16 @@
       "following": 4
     }
   ],
-  "messages": []
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "Greetings"
+    },
+    {
+      "id": 1,
+      "userId": 3,
+      "message": "Hi!"
+    }
+  ]
 }
