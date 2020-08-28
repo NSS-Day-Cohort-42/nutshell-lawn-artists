@@ -6,7 +6,6 @@ import { ListMessages } from "./messages/MessageList.js";
 import "./tasks/TaskForm.js";
 import "./friends/FriendForm.js"
 import  {ListWeather} from "./weather/WeatherList.js"
-import { eventForm } from "./events/EventForm.js";
 import { eventList } from "./events/EventList.js";
 
 
