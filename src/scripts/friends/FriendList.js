@@ -24,6 +24,10 @@ eventHub.addEventListener("click", clickEvent => {
   }
 })
 
+eventHub.addEventListener("friendChange", customEvent => {
+  render()
+})
+
 export const ListFriends = () => {
   getUsers()
     .then(getFriends)
