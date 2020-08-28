@@ -17,6 +17,10 @@ eventHub.addEventListener("click", clickEvent => {
   }
 })
 
+eventHub.addEventListener("messageChange", customEvent => {
+  render()
+})
+
 
 export const ListMessages = () => {
   getMessages()
