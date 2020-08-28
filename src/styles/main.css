@@ -1,1 +1,37 @@
 @import "popup.css";
+
+.dashboard {
+  display: flex;
+  border: solid black 3px;
+
+}
+
+.side-nav {
+  flex: 1 0 0px;
+  border: solid black 3px;
+
+}
+
+.create-container {
+  display: flex;
+  flex-flow: column;
+
+}
+
+.main-content {
+  flex: 4 0 0px;
+  border: solid black 3px;
+
+}
+
+.itenerary-container {
+  display: flex;
+
+}
+
+
+.content-right {
+  flex: 1 0 0px;
+  border: solid black 3px;
+
+}
