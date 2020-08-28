@@ -11,11 +11,7 @@ eventHub.addEventListener("taskStateChanged", () => {
     TaskList()
 })
 
-eventHub.addEventListener("click", (clickEvent) => {
-    if(event.target.id==="create--event"){
-        event.target.classList.add("strikethrough")
-    }
-})
+
 
 
 const render = () => {
