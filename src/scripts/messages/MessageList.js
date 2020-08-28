@@ -1,6 +1,6 @@
 import { getMessages, useMessages } from "./MessageProvider.js"
 import { getUsers } from "../users/UserProvider.js"
-import { getFriends } from "../friends/friendProvider.js"
+import { getFriends } from "../friends/FriendProvider.js"
 
 const contentTarget = document.querySelector(".content-right")
 const eventHub = document.querySelector(".container")
@@ -17,6 +17,7 @@ export const ListMessages = () => {
 const render = () => {
   const allMessages = useMessages()
 
+  
   
   contentTarget.innerHTML = `
   ${messageForm()}
