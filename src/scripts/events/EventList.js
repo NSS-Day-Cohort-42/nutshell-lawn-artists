@@ -46,7 +46,10 @@ export const eventList=()=>{
         }else{
             let isFirst=true
             correctEvents.forEach(eventObj=>{
-                if(isFirst){
+                if(isFirst&&eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
+                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)
+                    isFirst=false 
+                }else if(isFirst&&eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
                     isFirst=false 
                 }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
