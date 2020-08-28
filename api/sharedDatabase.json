@@ -83,17 +83,17 @@
   "events": [
     {
       "userId": 1,
-      "name": "The Other Event",
+      "name": "Lawns, and Bushes, and Shrubs",
       "date": "2020-08-31",
-      "location": "Manchester, TN",
+      "location": "Oh, MY",
       "zipCode": "37221",
       "id": 1
     },
     {
       "userId": 1,
-      "name": "New Event",
+      "name": "Gardens v Lawns",
       "date": "2020-08-30",
-      "location": "Here",
+      "location": "Middle Ground, KY",
       "zipCode": "63640",
       "id": 2
     },
