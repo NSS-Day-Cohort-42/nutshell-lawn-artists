@@ -1,11 +1,16 @@
-import keyObj from "../Settings.js"
+import keyObj from "../Settings.js";
+import { ListWeather } from "./WeatherList.js"
 
 const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("showWeatherHasBeenClicked", ce => {
+  zipCode = ce.detail.eventZipCode
+  ListWeather()
+})
 
 let weather = []
 let zipCode = 37201
 
-eventHub.addEventListener("")
 export const useWeather = () => {
     return weather.slice()
 }

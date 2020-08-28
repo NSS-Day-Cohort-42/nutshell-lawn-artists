@@ -17,9 +17,7 @@ eventHub.addEventListener("click", e => {
       eventZipCode: parseInt(eventZip)
     }
   })
-  debugger
   eventHub.dispatchEvent(showWeatherClicked)
-  console.log("Test click event show event weather", showWeatherClicked.detail.eventZipCode)
-  }
+}
 })
 
