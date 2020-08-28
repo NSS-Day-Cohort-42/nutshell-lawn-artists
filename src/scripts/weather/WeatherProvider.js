@@ -2,40 +2,28 @@ import keyObj from "../Settings.js"
 
 const eventHub = document.querySelector(".container")
 
-//will use once event listener is created.
-// let eventPostalCode
-
-// const eventHub = document.querySelector(".container")
-// eventHub.addEventListener("eventSelected", customEvent => {
-//     eventPostalCode = customEvent.detail.zip.substring(0, 5)
-// })
-
 let weather = []
+let zipCode = 37201
 
-eventHub.addEventListener("showEventWeather", (event) => {
-    event.target.detail === zipCode
-})
 
-export const useForecastCopy = () => {
+export const useWeather = () => {
     return weather.slice()
 }
 
-export const dispatchForecastCaptured = () => {
-    const forecastCaptured = new CustomEvent("dispatchedForecast")
+export const dispatchWeatherCaptured = () => {
+    const weatherCaptured = new CustomEvent("dispatchedWeather")
 
-    eventHub.dispatchEvent(forecastCaptured)
+    eventHub.dispatchEvent(weatherCaptured)
 }
 
-let zipCode = 37201
 
-export const getForecast = () => {
-// re-add ${eventPostalCode} to fetch argument once event listener is created
+export const getWeather = () => {
     return fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&appid=${keyObj.weatherKey}`)
         .then(response => response.json())
         .then(parsedWeather => {
             weather = parsedWeather.list
         })
-        .then(() => {useForecastCopy()
+        .then(() => {useWeather()
         })
-        .then(dispatchForecastCaptured)
+        .then(dispatchWeatherCaptured)
 }

@@ -1,10 +1,11 @@
-import { getForecast, useForecastCopy } from "./WeatherProvider.js";
+import { getWeather, useWeather } from "./WeatherProvider.js";
 
 const contentTarget = document.querySelector(".current-weather-container")
 const eventHub = document.querySelector(".container")
 
-eventHub.addEventListener("dispatchedForecast", () => {
-    filteredForecast()
+
+eventHub.addEventListener("dispatchedWeather", () => {
+    render()
 })
 
 export const dayOfTheWeek = (weather) => {
@@ -25,8 +26,13 @@ export const dayOfTheWeek = (weather) => {
     return daysOfTheWeek[day]
 }
 
-export const filteredForecast = () => {
-    let forecastData = useForecastCopy()
+export const ListWeather = () => {
+    getWeather()
+    .then(render)
+}
+
+export const render = () => {
+    let forecastData = useWeather()
 
     const day1 = forecastData[0]
     const day2 = forecastData[8]
