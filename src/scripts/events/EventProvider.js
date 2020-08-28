@@ -8,7 +8,7 @@ export const getEvents=()=>{
     .then(event=>events=event)
 }
 
-export const useEvent=()=>{
+export const useEvents=()=>{
     return events.slice()
 }
 
