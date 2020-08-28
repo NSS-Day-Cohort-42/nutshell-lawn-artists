@@ -4,4 +4,4 @@ dist/
 .DS_Store
 database.json
 exampleDatabase.json
-Settings.js
+.Settings.js
