@@ -60,5 +60,6 @@ export const eventList=()=>{
 }
 
 eventHub.addEventListener("eventChanged",event=>{
+    contentTarget.innerHTML=""
     eventList()  
 })
