@@ -8,7 +8,6 @@ import { eventList } from "./events/EventList.js";
 
 
 export const Nutshell = () => {
-    eventForm()
     TaskList() 
     ListFriends()
     ListArticles()
