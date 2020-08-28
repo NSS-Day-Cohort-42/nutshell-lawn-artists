@@ -1,4 +1,4 @@
-import keyObj from "../Settings.js"
+import keyObj from "../.Settings.js"
 
 const eventHub = document.querySelector(".container")
 
