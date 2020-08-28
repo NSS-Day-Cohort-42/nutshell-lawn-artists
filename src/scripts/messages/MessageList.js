@@ -1,10 +1,22 @@
-import { getMessages, useMessages } from "./MessageProvider.js"
+import { getMessages, useMessages, saveMessage } from "./MessageProvider.js"
 import { getUsers } from "../users/UserProvider.js"
 import { getFriends } from "../friends/FriendProvider.js"
 import { MessageCard } from "./MessageCard.js"
 
 const contentTarget = document.querySelector(".content-right")
 const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id === "message-submit-button") {
+    const messageField = document.querySelector("#message-input")
+    const newMessage = {
+      userId: parseInt(sessionStorage.activeUser),
+      message: messageField.value
+    }
+    saveMessage(newMessage)
+  }
+})
+
 
 export const ListMessages = () => {
   getMessages()
@@ -19,7 +31,7 @@ const render = () => {
   const allMessages = useMessages()
   
   contentTarget.innerHTML = `
-  ${allMessages.map(m => MessageCard(m))}
+  ${allMessages.map(m => MessageCard(m)).join("")}
   ${messageForm()}
   `
 }
