@@ -126,6 +126,11 @@
       "id": 1,
       "userId": 1,
       "message": "Greetings"
+    },
+    {
+      "id": 1,
+      "userId": 2,
+      "message": "Hi!"
     }
   ]
 }
