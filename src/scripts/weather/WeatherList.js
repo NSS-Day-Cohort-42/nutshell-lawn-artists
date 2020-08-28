@@ -4,7 +4,7 @@ const contentTarget = document.querySelector(".current-weather-container")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("dispatchedForecast", () => {
-    filteredWeather()
+    filteredForecast()
 })
 
 export const dayOfTheWeek = (weather) => {
@@ -25,7 +25,7 @@ export const dayOfTheWeek = (weather) => {
     return daysOfTheWeek[day]
 }
 
-export const filteredWeather = () => {
+export const filteredForecast = () => {
     let forecastData = useForecastCopy()
 
     const day1 = forecastData[0]
