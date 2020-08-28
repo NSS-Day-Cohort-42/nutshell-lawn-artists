@@ -5,7 +5,7 @@ export const TaskCardHTML = (task) => {
         <div class="task--desciption">${task.description}</div>
         <div class="task--date">${task.date}</div>
     <button class="btn task-edit--${task.id}" type="button">Edit</button>
-    <input type="checkbox" id="task-completed--${task.id}"></input>
+    <div>Completed? <input type="checkbox" id="task-completed--${task.id}"></input></div>
     </section>
     `
 }

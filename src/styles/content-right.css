@@ -3,3 +3,7 @@
   border: solid black 3px;
 
 }
+
+.strikethrough {
+  text-decoration: line-through
+}
