@@ -63,7 +63,9 @@ export const eventList=()=>{
             contentTarget.innerHTML=`
             <p>There are no events right now</p>
             `    
-        }else{contentTarget.innerHTML=correctEvents.map(eventObj=>eventHTML(eventObj)).join("")}
+        }else{
+            contentTarget.innerHTML=correctEvents.map(eventObj=>eventHTML(eventObj)).join("")
+        }
 }
 })
 }
