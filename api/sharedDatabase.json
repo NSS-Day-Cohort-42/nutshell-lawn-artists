@@ -48,68 +48,77 @@
       "url": "http://www.google.com",
       "title": "What Kind Of Lawn Art Are You?",
       "synopsis": "Buzzfeed Quiz",
-      "userId": "1",
+      "userId": 1,
       "id": 1
     },
     {
       "url": "http://www.google.com",
       "title": "Lawn Artist Enthusists",
       "synopsis": "Great Article",
-      "userId": "2",
+      "userId": 2,
       "id": 2
     },
     {
       "url": "http://www.google.com",
       "title": "Lawns: It's not easy being green",
       "synopsis": "A memoir",
-      "userId": "4",
+      "userId": 4,
       "id": 3
+    },
+    {
+      "userId": 1,
+      "title": "Grass, Grass, Grass!",
+      "synopsis": "Growing pains",
+      "url": "www.google.com",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Bugs!",
+      "synopsis": "They're everywhere!",
+      "url": "www.google.com",
+      "id": 5
     }
   ],
   "events": [],
   "tasks": [
     {
-    "userId": 1,
-    "title": "Monica's Test Task",
-    "description": "Only Monica should be able to see this",
-    "date": "2020-08-26",
-    "id": 1
+      "userId": 1,
+      "title": "Monica's Test Task",
+      "description": "Only Monica should be able to see this",
+      "date": "2020-08-26",
+      "id": 1
     },
     {
-    "userId": 2,
-    "title": "Austin's Test Task",
-    "description": "Only Austin should be able to see this",
-    "date": "2020-08-27",
-    "id": 2
+      "userId": 2,
+      "title": "Austin's Test Task",
+      "description": "Only Austin should be able to see this",
+      "date": "2020-08-27",
+      "id": 2
     },
     {
-    "userId": 3,
-    "title": "Gib's Test Task",
-    "description": "Only Gib should be able to see this",
-    "date": "2020-08-27",
-    "id": 3
+      "userId": 3,
+      "title": "Gib's Test Task",
+      "description": "Only Gib should be able to see this",
+      "date": "2020-08-27",
+      "id": 3
     },
     {
-    "userId": 4,
-    "title": "Mikayla's Test Task",
-    "description": "Only Mikayla should be able to see this",
-    "date": "2020-08-27",
-    "id": 4
+      "userId": 4,
+      "title": "Mikayla's Test Task",
+      "description": "Only Mikayla should be able to see this",
+      "date": "2020-08-27",
+      "id": 4
     },
     {
-    "userId": 5,
-    "title": "Todd's Test Task",
-    "description": "Only Todd should be able to see this",
-    "date": "2020-08-27",
-    "id": 5
+      "userId": 5,
+      "title": "Todd's Test Task",
+      "description": "Only Todd should be able to see this",
+      "date": "2020-08-27",
+      "id": 5
     }
   ],
   "friends": [
-    {
-      "id": 3,
-      "userID": 1,
-      "following": 4
-    },
     {
       "id": 2,
       "userID": 1,
@@ -121,5 +130,16 @@
       "following": 4
     }
   ],
-  "messages": []
+  "messages": [
+    {
+      "id": 1,
+      "userId": 1,
+      "message": "Greetings"
+    },
+    {
+      "id": 1,
+      "userId": 3,
+      "message": "Hi!"
+    }
+  ]
 }

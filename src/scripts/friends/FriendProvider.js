@@ -20,7 +20,7 @@ export const isFriendOfCurrentUser = userId => {
 export const getFriends = () => {
   return fetch("http://localhost:8088/friends")
     .then(res => res.json())
-    .then(friendData => friends = friendData)
+    .then(friendData =>friends=friendData)
 }
 
 export const addFriend = userId => {
