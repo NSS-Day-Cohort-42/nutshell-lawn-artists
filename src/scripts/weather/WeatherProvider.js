@@ -5,7 +5,7 @@ const eventHub = document.querySelector(".container")
 let weather = []
 let zipCode = 37201
 
-
+eventHub.addEventListener("")
 export const useWeather = () => {
     return weather.slice()
 }
