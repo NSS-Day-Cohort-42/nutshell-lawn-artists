@@ -15,6 +15,7 @@ export const eventList=()=>{
         let eventArray=useEvents()
         /*convert the date string in the event object into a date object.
         Then assign the date object to the date key of the event object*/
+        friendsArray.map(()=>console.log("not broke"))
         if(eventArray.length!==0){
             eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
@@ -26,9 +27,6 @@ export const eventList=()=>{
             return secondObj.date-firstObj.date
         }).reverse()
         let correctEvents=[]
-        if(friendsArray.length===0){
-            correctEvents=eventsSortedByDate.filter(eventObj=>eventObj.userId===parseInt(sessionStorage.getItem("activeUser")))
-        }else{
             eventsSortedByDate.map(eventObj=>{
                 if(eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
                     correctEvents.push(eventObj)
@@ -41,30 +39,21 @@ export const eventList=()=>{
                 
                 )
         })
-        }
-        /*const correctEvents=eventsSortedByDate.map(eventObj=>{
-            let currentEvent={}
-            if(friendsArray===undefined||friendsArray.length===0){
-                if(eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
-                    currentEvent=eventObj
-                }
-            }else{
-                friendsArray.map(friendObj=>{
-                    if(eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))||eventObj.userId===friendObj.following){
-                        console.log(eventObj)
-                        currentEvent=eventObj
-                }
-    })
-                }
-        return currentEvent
-        })*/
-        console.log(correctEvents)
         if (correctEvents===undefined||correctEvents.length===0){
             contentTarget.innerHTML=`
             <p>There are no events right now</p>
             `    
-        }else{contentTarget.innerHTML=correctEvents.map(eventObj=>eventHTML(eventObj)).join("")}
+        }else{
+            let isFirst=true
+            correctEvents.forEach(eventObj=>{
+                if(isFirst){
+                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
+                    isFirst=false 
+                }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
+                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
+                }else{contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)}
+            })
+        }
 }
 })
 }
-
