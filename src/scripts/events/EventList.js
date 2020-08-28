@@ -3,6 +3,7 @@ import {eventHTML} from "./EventCard.js"
 import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvider.js"
 
 const contentTarget=document.querySelector(".event-container")
+const eventHub=document.querySelector(".container")
 
 export const eventList=()=>{
     //get events then get friends
@@ -57,3 +58,7 @@ export const eventList=()=>{
 }
 })
 }
+
+eventHub.addEventListener("eventChanged",event=>{
+    eventList()  
+})
