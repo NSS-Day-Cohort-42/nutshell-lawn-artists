@@ -1,0 +1,11 @@
+.side-nav {
+  flex: 1 0 0px;
+  border: solid black 3px;
+
+}
+
+.create-container {
+  display: flex;
+  flex-flow: column;
+
+}
