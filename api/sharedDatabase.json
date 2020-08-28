@@ -80,7 +80,16 @@
       "id": 5
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "userId": 1,
+      "name": "The Other Event",
+      "date": "2020-08-31",
+      "location": "Manchester, TN",
+      "zipCode": "37221",
+      "id": 1
+    }
+  ],
   "tasks": [
     {
       "userId": 1,
