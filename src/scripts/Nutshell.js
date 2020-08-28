@@ -5,6 +5,7 @@ import { ListArticles } from "./articles/ArticleList.js"
 import { ListMessages } from "./messages/MessageList.js";
 import "./tasks/TaskForm.js";
 import "./friends/FriendForm.js"
+import  {ListWeather} from "./weather/WeatherList.js"
 import { eventList } from "./events/EventList.js";
 
 
@@ -14,6 +15,7 @@ export const Nutshell = () => {
     TaskList()
     ListFriends()
     ListArticles()
+    ListWeather()
     ListMessages()
     eventList()
 }
