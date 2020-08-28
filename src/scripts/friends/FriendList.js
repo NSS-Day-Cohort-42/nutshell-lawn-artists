@@ -40,6 +40,7 @@ const render = () => {
   
   contentTarget.innerHTML = `
   ${friendSearch()}
+  <div></div>
   ${userFriendIds.map( f => {
     return FriendCard(f) + "<div></div>"
   }).join("")}
