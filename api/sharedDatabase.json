@@ -48,21 +48,21 @@
       "url": "http://www.google.com",
       "title": "What Kind Of Lawn Art Are You?",
       "synopsis": "Buzzfeed Quiz",
-      "userId": "1",
+      "userId": 1,
       "id": 1
     },
     {
       "url": "http://www.google.com",
       "title": "Lawn Artist Enthusists",
       "synopsis": "Great Article",
-      "userId": "2",
+      "userId": 2,
       "id": 2
     },
     {
       "url": "http://www.google.com",
       "title": "Lawns: It's not easy being green",
       "synopsis": "A memoir",
-      "userId": "4",
+      "userId": 4,
       "id": 3
     },
     {
@@ -71,6 +71,13 @@
       "synopsis": "Growing pains",
       "url": "www.google.com",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Bugs!",
+      "synopsis": "They're everywhere!",
+      "url": "www.google.com",
+      "id": 5
     }
   ],
   "events": [],

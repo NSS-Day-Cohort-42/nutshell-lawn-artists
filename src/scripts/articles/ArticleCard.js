@@ -16,7 +16,7 @@ export const ArticleCard = ( articleEntry ) => {
 }
 
 export const ArticleEditButton = ( articleEntry ) => {
-  if(articleEntry.userId === sessionStorage.getItem("activeUser")) {
+  if(articleEntry.userId === parseInt(sessionStorage.getItem("activeUser"))) {
     return `
     <button class="btn art-edit art--${ articleEntry.id }" id="art" type="button">
       Edit
