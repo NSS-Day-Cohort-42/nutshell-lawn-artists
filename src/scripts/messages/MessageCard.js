@@ -4,9 +4,10 @@ export const MessageCard = message => {
   
   
   return `
-  <div class="message-bubble">
-    ${FriendCard(message.userId)}
-    <span class="message-text">${message.message}</span>
-  </div>
+    <div class="message-bubble">
+      ${FriendCard(message.userId)}
+      <span class="message-text">: </span>
+      <span class="message-text">${message.message}</span>
+    </div>
   `
 }
