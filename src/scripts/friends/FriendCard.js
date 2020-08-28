@@ -23,14 +23,14 @@ export const FriendCard = userId => {
   let button = ''
   
   if (userId !== currentUserId) {
-    button = `<button class="btn" id="button-friend-action--${userId}">[X]</button>`
+    button = `<button class="btn" id="button-friend-action--${userId}">[...]</button>`
   }
 
   return `
-  <div class="friend-card--${userId}">
+  <span class="friend-card--${userId}">
     ${friendUserName}
     ${button}
-  </div>
+  </span>
   `
 
 }
