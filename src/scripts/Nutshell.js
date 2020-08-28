@@ -1,3 +1,4 @@
+import {eventForm} from "./events/EventForm.js"
 import { TaskList } from "./tasks/TaskList.js";
 import "./tasks/TaskForm.js";
 import { ListFriends } from "./friends/FriendList.js"
@@ -7,6 +8,8 @@ import "./articles/ArticleForm.js"
 
 
 export const Nutshell = () => {
+    // Render all your UI components here
+    eventForm()
     TaskList()
     ListFriends()
     ListArticles()
