@@ -5,3 +5,4 @@ dist/
 database.json
 exampleDatabase.json
 Settings.js
+.Settings.js
