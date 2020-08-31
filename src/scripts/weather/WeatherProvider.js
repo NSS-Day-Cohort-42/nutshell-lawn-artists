@@ -31,4 +31,4 @@ export const getWeather = () => {
         .then(() => {useWeather()
         })
         .then(dispatchWeatherCaptured)
-}
+    }

@@ -1,6 +1,9 @@
 .popup-container {
   visibility: hidden;
   border: solid black 3px;
+  z-index:3;
+  position: absolute;
+  background-color: #c9ada1;
 }
 
 .visible {
