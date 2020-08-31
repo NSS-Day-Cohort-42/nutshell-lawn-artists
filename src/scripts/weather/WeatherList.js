@@ -66,8 +66,8 @@ const render = () => {
                 </div
             </div>
         </div>
-                `
-            }).join("")
+        `
+    }).join("")
 
     contentTarget.innerHTML = `
     <h2 class="weather-location">${location}</h2>
