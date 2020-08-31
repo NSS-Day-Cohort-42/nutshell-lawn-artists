@@ -1,17 +1,18 @@
-import { saveArticle, getArticles, useArticles } from "./ArticleProvider.js";
+import { saveArticle, getArticles, getSingleArticle, editArticle } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".container")
 const popup = document.querySelector(".popup-container")
-
+const newArticleId = 0
 eventHub.addEventListener("click", e => {
 
   if(e.target.classList.contains("btn-save-art")) {
-    const hiddenArticleId = document.querySelector(".art-hidden-id")
+    const hiddenArticleId = document.querySelector(".art-hidden-id").value
     const articleTitle = document.querySelector(".art-title-input")
     const articleSynopsis = document.querySelector(".art-synopsis-input")
     const articleUrl = document.querySelector(".art-url-input")
+    debugger
 
-    if (hiddenArticleId === "") {
+    if (hiddenArticleId === "0") {
       const newArticle = {
         userId: parseInt(sessionStorage.getItem("activeUser")),
         title: articleTitle.value,
@@ -39,35 +40,31 @@ eventHub.addEventListener("click", e => {
 
   else if (e.target.classList.contains("btn-create-article")) {
     popup.classList.add("visible")
-    renderArticleForm()
+    renderArticleForm(newArticleId)
   }
 })
 
 export const ArticleForm = () => {
   getArticles()
     .then(() => {
-        renderArticleForm()
+        renderArticleForm(newArticleId)
     })
 }
 
 eventHub.addEventListener("editArticleClicked", ce => {
   const articleId = ce.detail.articleId
 
-  const hiddenArticleId = document.querySelector(".art-hidden-id")
-  const articleTitle = document.querySelector(".art-title-input")
-  const articleSynopsis = document.querySelector(".art-synopsis-input")
-  const articleUrl = document.querySelector(".art-url-input")
-
-  const articleToEdit = getSingleArticle(articleId)
-  renderArticleForm()
+  renderArticleForm(articleId)
+  popup.classList.add("visible")
+  console.log(articleId, "Test - article id  obtained by ce")
 
 })
 
-const renderArticleForm = () => {
+const renderArticleForm = (articleId) => {
 
   popup.innerHTML = `
     <section class="form-create-art">
-      <input type="hidden" class="art-hidden-id" name="articleId" id="articleId">
+      <input type="hidden" class="art-hidden-id" name="articleId" id="articleId" value="${articleId}"></input>
       <input type="text" class="art-title-input" id="articleTitle" placeholder="Article title"></input>
       <input type="text" class="art-synopsis-input" id="articleSynopsis" placeholder="Article Synopsis"></input>
       <input type="url" class="art-url-input" id="articleUrl" placeholder="Article URL"></input>
