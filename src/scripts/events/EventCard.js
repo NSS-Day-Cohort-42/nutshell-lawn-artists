@@ -47,8 +47,9 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <section class="event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
     <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-    <div class="event--location--first">Event location: ${eventObj.location}</div>
-    <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
+    <div class="event--location--first" id="event-location--${eventObj.id}">${eventObj.location}</div>
+    <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
+    <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
     <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
@@ -57,8 +58,9 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <section class="event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
     <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-    <div class="event--location--first">Event location: ${eventObj.location}</div>
-    <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
+    <div class="event--location--first" id="event-location--${eventObj.id}">${eventObj.location}</div>
+    <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
+    <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
     </section>
     `
     }else if(isOwn){
@@ -66,8 +68,9 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
     <section class="event">
     <div class="event--name">Event name: ${eventObj.name}</div>
     <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-    <div class="event--location">Event location: ${eventObj.location}</div>
-    <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
+    <div class="event--location" id="event-location--${eventObj.id}">${eventObj.location}</div>
+    <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
+    <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
     <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
@@ -76,19 +79,23 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <section class="event">
         <div class="event--name">Event name: ${eventObj.name}</div>
         <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-        <div class="event--location">Event location: ${eventObj.location}</div>
-        <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
+        <div class="event--location" id="event-location--${eventObj.id}">${eventObj.location}</div>
+        <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
+        <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
         </section>
         `   
     }
 }
 
 eventHub.addEventListener("click", e => {
-  if(e.target.id.startsWith("weather--")) {
-    const eventZip = e.target.id.split("--")[1]
+  if(e.target.id.startsWith("event-weather--")) {
+    const eventId = e.target.id.split("--")[1]
+    const eventZip = document.querySelector(`#event-zip--${eventId}`)
+    const eventlocation = document.querySelector(`#event-location--${eventId}`)
     const showWeatherClicked = new CustomEvent("showWeatherHasBeenClicked", {
     detail: {
-      eventZipCode: parseInt(eventZip)
+      eventZipCode: parseInt(eventZip.innerHTML),
+      eventWeatherLocation: eventlocation.innerHTML
     }
   })
   eventHub.dispatchEvent(showWeatherClicked)

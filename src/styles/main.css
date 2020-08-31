@@ -1,6 +1,7 @@
 @import "./popup.css";
 @import "./side-nav.css";
 @import "./content-right.css";
+@import "./weather.css";
 @import "./eventStyling.css";
 @import "./taskStyling.css";
 @import "./news.css";
@@ -21,8 +22,4 @@
 
 body{
   background-color: #eae0cc;
-}
-
-.current-weather-container{
-  display: flex;
 }
