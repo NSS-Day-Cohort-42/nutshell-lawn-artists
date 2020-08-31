@@ -16,7 +16,6 @@ export const eventList=()=>{
         let eventArray=useEvents()
         /*convert the date string in the event object into a date object.
         Then assign the date object to the date key of the event object*/
-        friendsArray.map(()=>console.log("not broke"))
         if(eventArray.length!==0){
             eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
