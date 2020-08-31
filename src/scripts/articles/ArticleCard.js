@@ -30,7 +30,7 @@ export const ArticleEditButton = ( articleEntry ) => {
 
 eventHub.addEventListener("click", e => {
   if (e.target.id.startsWith("artEdit--")) {
-    
+
     const artId = e.target.id.split("--")[1]
 
     const editArticleButtonClicked = new CustomEvent("editArticleClicked", {
@@ -38,5 +38,6 @@ eventHub.addEventListener("click", e => {
         articleId: artId
       }
     })
+    eventHub.dispatchEvent(editArticleButtonClicked)
   }
 })
