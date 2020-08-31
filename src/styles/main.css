@@ -1,21 +1,25 @@
 @import "./popup.css";
 @import "./side-nav.css";
 @import "./content-right.css";
-
+@import "./weather.css";
+@import "./eventStyling.css";
+@import "./taskStyling.css";
+@import "./news.css";
 
 .dashboard {
   display: flex;
-  border: solid black 3px;
-
+  visibility: hidden;
 }
 
 .main-content {
   flex: 4 0 0px;
-  border: solid black 3px;
-
 }
 
 .itenerary-container {
   display: flex;
+  padding-bottom: 0px;
+}
 
+body{
+  background-color: #eae0cc;
 }
