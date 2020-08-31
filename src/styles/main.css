@@ -1,6 +1,7 @@
 @import "./popup.css";
 @import "./side-nav.css";
 @import "./content-right.css";
+@import "./weather.css";
 
 
 .dashboard {
@@ -17,5 +18,7 @@
 
 .itenerary-container {
   display: flex;
-
 }
+
+
+
