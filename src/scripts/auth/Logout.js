@@ -12,6 +12,9 @@ eventHub.addEventListener("click", clickEvent => {
 
 export const ListLogout = () => {
   contentTarget.innerHTML = `
+  <div>
+    <img src="../images/logo.png" id="logo-image">
+  </div>
   <button id="logout-button">Logout</button>
   `
 }
