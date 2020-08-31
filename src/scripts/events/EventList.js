@@ -3,7 +3,8 @@ import {eventHTML} from "./EventCard.js"
 import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvider.js"
 
 const contentTarget=document.querySelector(".event-container")
-const eventHub = document.querySelector(".container")
+const eventHub=document.querySelector(".container")
+
 eventHub.addEventListener("eventChanged", () => {
   eventList()
 })
@@ -18,7 +19,6 @@ export const eventList=()=>{
         let eventArray=useEvents()
         /*convert the date string in the event object into a date object.
         Then assign the date object to the date key of the event object*/
-        friendsArray.map(()=>console.log("not broke"))
         if(eventArray.length!==0){
             eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
@@ -49,9 +49,12 @@ export const eventList=()=>{
         }else{
             let isFirst=true
             correctEvents.forEach(eventObj=>{
-                if(isFirst){
-                    contentTarget.innerHTML=eventHTML(eventObj, isFirst, false)
-                    isFirst=false
+                if(isFirst&&eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
+                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)
+                    isFirst=false 
+                }else if(isFirst&&eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
+                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
+                    isFirst=false 
                 }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
                 }else{contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)}
