@@ -57,6 +57,10 @@ export const useArticles = () => {
   return articles.slice()
 }
 
+export const useArticleById = articleId => {
+  return articles.find( a => a.id === articleId)
+}
+
 export const getArticles = () => {
   return fetch('http://localhost:8088/articles')
     .then(response => response.json())
