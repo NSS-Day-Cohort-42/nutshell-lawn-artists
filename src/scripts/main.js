@@ -2,14 +2,17 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { Nutshell } from "./Nutshell.js"
 
 const eventHub=document.querySelector(".container")
+const mainVisibility=document.querySelector(".dashboard")
 
 if (sessionStorage.getItem("activeUser")===null){
     LoginForm()
 }else if(sessionStorage.getItem("activeUser")!==null){
+        mainVisibility.style.visibility="visible"
     Nutshell()
 }
 
 eventHub.addEventListener("userAuthenticated",e=>{
+        mainVisibility.style.visibility="visible"
     Nutshell()
 })
 /*

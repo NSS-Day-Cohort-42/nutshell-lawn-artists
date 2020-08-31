@@ -57,8 +57,8 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <section class="event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
     <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-    <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
     <div class="event--location--first">Event location: ${eventObj.location}</div>
+    <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
     </section>
     `
     }else if(isOwn){
@@ -76,8 +76,8 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <section class="event">
         <div class="event--name">Event name: ${eventObj.name}</div>
         <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
-        <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
         <div class="event--location">Event location: ${eventObj.location}</div>
+        <button class="btn show-weather-btn" id="weather--${eventObj.zipCode}">Show Weather</button>
         </section>
         `   
     }

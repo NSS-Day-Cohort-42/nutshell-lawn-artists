@@ -1,0 +1,13 @@
+.event--first{
+    background-color: #4d6a6d;
+    border:solid black 2px;
+}
+.event{
+    background-color: #a0a083;
+    border-bottom:solid black 2px;
+}
+.event-container{
+    border: solid black 4px;
+    border-bottom:solid black 2px;
+    width: 35%;
+}

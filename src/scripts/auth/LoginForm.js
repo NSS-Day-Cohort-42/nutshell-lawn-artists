@@ -11,8 +11,7 @@ eventHub.addEventListener("click", e => {
     if (e.target.id === "login--button") {
         const username = document.querySelector("#login--username").value
         const password = document.querySelector("#login--password").value
-
-
+        
         return fetch(`http://localhost:8088/users?username=${username}`)
             .then(response => response.json())
             .then(users => {
