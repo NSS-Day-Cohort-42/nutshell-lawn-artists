@@ -4,6 +4,10 @@ import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvi
 
 const contentTarget=document.querySelector(".event-container")
 const eventHub=document.querySelector(".container")
+
+eventHub.addEventListener("eventChanged", () => {
+  eventList()
+})
 export const eventList=()=>{
     //get events then get friends
     getEvents()
@@ -15,7 +19,6 @@ export const eventList=()=>{
         let eventArray=useEvents()
         /*convert the date string in the event object into a date object.
         Then assign the date object to the date key of the event object*/
-        friendsArray.map(()=>console.log("not broke"))
         if(eventArray.length!==0){
             eventArray=eventArray.map(eventObj=>{
             const dateObj=new Date(eventObj.date)
@@ -35,14 +38,14 @@ export const eventList=()=>{
                     if(eventObj.userId===friendObj.following){
                         correctEvents.push(eventObj)
                     }
-                }) 
-                
+                })
+
                 )
         })
         if (correctEvents===undefined||correctEvents.length===0){
             contentTarget.innerHTML=`
             <p>There are no events right now</p>
-            `    
+            `
         }else{
             let isFirst=true
             correctEvents.forEach(eventObj=>{
