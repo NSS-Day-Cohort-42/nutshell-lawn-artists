@@ -4,15 +4,27 @@
     justify-content: center;
 }
   
-/* .weatherDayCard {
+.weatherDayCard {
 display: flex;
 flex-flow: column;
 padding-bottom: 10px;
-} */
+padding-right: 3px;
+padding-left: 3px;
+}
 
 .weather-location {
 display: flex;
 justify-content: center;
+}
+
+.temps {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+.weatherDayOfTheWeekCard {
+    display: flex;
+    justify-content: center;
 }
 
   

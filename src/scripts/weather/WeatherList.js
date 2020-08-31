@@ -63,7 +63,7 @@ const render = () => {
                     <div class="temp--low">
                     ${Math.round(day.main.temp_min)}&deg; F
                     </div>
-                </div
+                </div>
             </div>
         </div>
         `
