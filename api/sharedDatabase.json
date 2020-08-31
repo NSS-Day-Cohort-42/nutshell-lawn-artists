@@ -80,7 +80,16 @@
       "id": 5
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "userId": 1,
+      "name": "Lawn Party",
+      "date": "2020-08-28",
+      "location": "DC",
+      "zipCode": "20001",
+      "id": 1
+    }
+  ],
   "tasks": [
     {
       "userId": 1,
