@@ -1,6 +1,7 @@
 import { getArticles, useArticles } from "./ArticleProvider.js"
 import { getUsers } from "../users/UserProvider.js"
 import { ArticleCard } from "./ArticleCard.js"
+import {  useFriendsByUserId } from "../friends/FriendProvider.js"
 
 
 const eventHub = document.querySelector(".container")
@@ -25,10 +26,25 @@ const renderCreateButton = () => {
   createArticleButton.innerHTML += `
   <button class="btn btn-create-article" id="createArticleBtn">Create Article</button>
   `
-  
+
 }
 
 const renderArticles = () => {
+
   const articles = useArticles()
-  articleListTarget.innerHTML = articles.map( a => ArticleCard(a)).join("")
+  const usersFriends = useFriendsByUserId(sessionStorage.activeUser)
+  const userFriendIds = usersFriends.map(f => f.following)
+
+  const friendsArticles = userFriendIds.map(f => {
+    return ArticleCard(f)
+  }).join("")
+
+  const usersArticles = articles.filter(article => {
+    if(article.userId === parseInt(sessionStorage.activeUser)) {
+      return true
+    }
+  })
+
+  articleListTarget.innerHTML = usersArticles.map( a => ArticleCard(a)).join("")
+  articleListTarget.innerHTML += friendsArticles
 }
