@@ -5,7 +5,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
             monthString="January"
             break
         case 1:
-            monthString="Fedruary"
+            monthString="February"
             break
             case 2:
                 monthString="March"
