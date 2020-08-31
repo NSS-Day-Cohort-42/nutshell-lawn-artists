@@ -1,4 +1,4 @@
-import { saveArticle, getArticles } from "./ArticleProvider.js";
+import { saveArticle, getArticles, useArticles } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".container")
 const popup = document.querySelector(".popup-container")
@@ -37,15 +37,26 @@ export const ArticleForm = () => {
     })
 }
 
+eventHub.addEventListener("editArticleClicked", ce => {
+  const articleId = ce.detail.articleId
+  const articles = useArticles()
+  const articleToEdit = articles.find(article => {
+    if(article.id === articleId) {
+      return true
+    }
+  })
+})
+
 const renderArticleForm = () => {
 
   popup.innerHTML = `
     <section class="form-create-art">
-        <input type="text" class="art-title-input" id="articleTitle" placeholder="Article title"></input>
-        <input type="text" class="art-synopsis-input" id="articleSynopsis" placeholder="Article Synopsis"></input>
-        <input type="url" class="art-url-input" id="articleUrl" placeholder="Article URL"></input>
-        <button class="btn btn-save-art" id="saveArticle">Save Article</button>
-        <button class="btn btn-close-form" id="closeForm">Cancel</button>
+      <input type="hidden" name="articleId" id="articleId">
+      <input type="text" class="art-title-input" id="articleTitle" placeholder="Article title"></input>
+      <input type="text" class="art-synopsis-input" id="articleSynopsis" placeholder="Article Synopsis"></input>
+      <input type="url" class="art-url-input" id="articleUrl" placeholder="Article URL"></input>
+      <button class="btn btn-save-art" id="saveArticle">Save Article</button>
+      <button class="btn btn-close-form" id="closeForm">Cancel</button>
     </section>
     `
 }

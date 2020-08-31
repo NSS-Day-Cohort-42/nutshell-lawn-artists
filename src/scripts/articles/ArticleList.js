@@ -25,3 +25,4 @@ export const renderArticles = () => {
   const articles = useArticles()
   articleListTarget.innerHTML = articles.map( a => ArticleCard(a)).join("")
 }
+
