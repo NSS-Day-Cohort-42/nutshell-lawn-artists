@@ -21,12 +21,6 @@ eventHub.addEventListener("click", event=>{
     if(event.target.id==="eventBtn"){
         contentTarget.innerHTML=`
     <div id="event--form__content" class="event--form__content">
-<<<<<<< HEAD
-    <p>Name of event: <input type="text" class="event--form__input" id="eventName"></p>
-    <p>Date of  event: <input type="date" class="event--form__input" id="eventDate"></p>
-    <p>Location of event: <input type="text" class="event--form__input" id="eventLocation"></p>
-    <p>Event zipcode: <input type="text" class="event--form__input" id="eventZip"></p>
-=======
     <p>Name of event:</p>
     <input type="text" class="event--form__input" id="eventName">
     <p>Date of  event:</p>
@@ -35,7 +29,6 @@ eventHub.addEventListener("click", event=>{
     <input type="text" class="event--form__input" id="eventLocation">
     <p>Zip Code of event:</p>
     <input type="text" class="event--form__input" id="eventZipCode">
->>>>>>> master
     <button id="event--form__close" class="close">Close event form</button>
     <button id="create--event">Submit</button>
     </div>
@@ -49,12 +42,8 @@ eventHub.addEventListener("click", event=>{
         const eventName=document.querySelector("#eventName").value
         const eventDate=document.querySelector("#eventDate").value
         const eventLocation=document.querySelector("#eventLocation").value
-<<<<<<< HEAD
-        const eventZip=document.querySelector("#eventZip").value
-=======
         const eventZipCode = document.querySelector("#eventZipCode").value
 
->>>>>>> master
         console.log(document.querySelector("#eventDate"))
         if(eventName===""){
             alert("Failed to enter an event name")
@@ -70,11 +59,7 @@ eventHub.addEventListener("click", event=>{
                 "name":eventName,
                 "date":eventDate,
                 "location":eventLocation,
-<<<<<<< HEAD
-                "zipCode":eventZip
-=======
                 "zipCode":eventZipCode
->>>>>>> master
             }
             saveEvent(eventObject)
         }

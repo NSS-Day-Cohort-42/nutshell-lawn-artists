@@ -3,14 +3,10 @@ import {eventHTML} from "./EventCard.js"
 import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvider.js"
 
 const contentTarget=document.querySelector(".event-container")
-<<<<<<< HEAD
-const eventHub=document.querySelector(".container")
-=======
 const eventHub = document.querySelector(".container")
 eventHub.addEventListener("eventChanged", () => {
   eventList()
 })
->>>>>>> master
 export const eventList=()=>{
     //get events then get friends
     getEvents()
@@ -53,18 +49,9 @@ export const eventList=()=>{
         }else{
             let isFirst=true
             correctEvents.forEach(eventObj=>{
-<<<<<<< HEAD
-                if(isFirst&&eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
-                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)
-                    isFirst=false 
-                }else if(isFirst&&eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
-                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
-                    isFirst=false 
-=======
                 if(isFirst){
                     contentTarget.innerHTML=eventHTML(eventObj, isFirst, false)
                     isFirst=false
->>>>>>> master
                 }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
                 }else{contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)}
