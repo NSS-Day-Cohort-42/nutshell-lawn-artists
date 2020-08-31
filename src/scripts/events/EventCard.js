@@ -11,7 +11,6 @@ export const eventHTML=(eventObj)=>{
 }
 
 eventHub.addEventListener("click", e => {
-  debugger
   if(e.target.id.startsWith("event-weather--")) {
     const eventId = e.target.id.split("--")[1]
     const eventZip = document.querySelector(`#event-zip--${eventId}`)
