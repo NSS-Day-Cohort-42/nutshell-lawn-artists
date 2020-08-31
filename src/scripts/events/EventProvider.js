@@ -34,4 +34,5 @@ export const deleteEvent=(id)=>{
 
 const dispatchStateChangeEvent=()=>{
     eventHub.dispatchEvent(new CustomEvent("eventChanged"))
+    
 }

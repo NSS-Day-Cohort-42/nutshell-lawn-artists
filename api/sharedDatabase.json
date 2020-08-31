@@ -80,7 +80,31 @@
       "id": 5
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "name": "Lawns, and Bushes, and Shrubs",
+      "date": "2020-08-31",
+      "location": "Oh, MY",
+      "zipCode": "37221",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "name": "Gardens v Lawns",
+      "date": "2020-08-30",
+      "location": "Middle Ground, KY",
+      "zipCode": "63640",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "name": "Mow, Mow, Mow Your Lawn!",
+      "date": "2020-08-29",
+      "location": "Stream, DN",
+      "zipCode": "33631",
+      "id": 3
+    }
+  ],
   "tasks": [
     {
       "userId": 1,

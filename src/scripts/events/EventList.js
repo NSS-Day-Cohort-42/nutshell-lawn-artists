@@ -3,7 +3,10 @@ import {eventHTML} from "./EventCard.js"
 import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvider.js"
 
 const contentTarget=document.querySelector(".event-container")
-
+const eventHub = document.querySelector(".container")
+eventHub.addEventListener("eventChanged", () => {
+  eventList()
+})
 export const eventList=()=>{
     //get events then get friends
     getEvents()
@@ -35,20 +38,20 @@ export const eventList=()=>{
                     if(eventObj.userId===friendObj.following){
                         correctEvents.push(eventObj)
                     }
-                }) 
-                
+                })
+
                 )
         })
         if (correctEvents===undefined||correctEvents.length===0){
             contentTarget.innerHTML=`
             <p>There are no events right now</p>
-            `    
+            `
         }else{
             let isFirst=true
             correctEvents.forEach(eventObj=>{
                 if(isFirst){
-                    contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
-                    isFirst=false 
+                    contentTarget.innerHTML=eventHTML(eventObj, isFirst, false)
+                    isFirst=false
                 }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
                 }else{contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)}
