@@ -58,6 +58,7 @@ export const useArticles = () => {
 }
 
 export const useArticleById = articleId => {
+  articleId = parseInt(articleId)
   return articles.find( a => a.id === articleId)
 }
 
