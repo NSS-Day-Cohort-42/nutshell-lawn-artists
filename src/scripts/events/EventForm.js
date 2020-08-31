@@ -26,7 +26,7 @@ eventHub.addEventListener("click", event=>{
     <p>Location of event: <input type="text" class="event--form__input" id="eventLocation"></p>
     <p>Event zipcode: <input type="text" class="event--form__input" id="eventZip"></p>
     <button id="event--form__close" class="close">Close event form</button>
-    <button id="create--event">submit</button>
+    <button id="create--event">Submit</button>
     </div>
     `
     contentTarget.classList.add("visible")
