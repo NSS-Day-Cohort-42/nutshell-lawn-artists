@@ -19,8 +19,6 @@ eventHub.addEventListener("click", clickEvent => {
         saveTask(newTask)
         .then(TaskForm)
     } else if (clickEvent.target.id === "closeTask") {
-        //const modal = document.querySelector(".taskForm")
-        //modal.style.display = "none"
         contentTarget.classList.remove("visible")
 
     } else if (clickEvent.target.id === "createTask") {
