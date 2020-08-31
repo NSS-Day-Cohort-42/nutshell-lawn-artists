@@ -18,7 +18,7 @@ export const ArticleCard = ( articleEntry ) => {
 export const ArticleEditButton = ( articleEntry ) => {
   if(articleEntry.userId === parseInt(sessionStorage.getItem("activeUser"))) {
     return `
-    <button class="btn art-edit" id="artEdit--${ articleEntry.id }" id="art" type="button">
+    <button class="btn art-edit" id="artEdit--${ articleEntry.id }" type="button">
       Edit
     </button>
     `
@@ -41,3 +41,19 @@ eventHub.addEventListener("click", e => {
     eventHub.dispatchEvent(editArticleButtonClicked)
   }
 })
+
+eventHub.addEventListener("click", e => {
+  if (e.target.id.startsWith("artDelete--")) {
+
+    const artId = e.target.id.split("--")[1]
+
+    const deleteArticleButtonClicked = new CustomEvent("deleteArticleClicked", {
+      detail: {
+        articleId: artId
+      }
+    })
+    eventHub.dispatchEvent(deleteArticleButtonClicked)
+  }
+})
+
+
