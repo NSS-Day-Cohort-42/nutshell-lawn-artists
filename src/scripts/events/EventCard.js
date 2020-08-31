@@ -44,7 +44,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         return `
         <section class="event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
-    <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()} ${eventObj.date.getFullYear()}</div>
+    <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location--first">Event location: ${eventObj.location}</div>
     <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
@@ -53,7 +53,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         return `
         <section class="event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
-    <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()} ${eventObj.date.getFullYear()}</div>
+    <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location--first">Event location: ${eventObj.location}</div>
     </section>
     `
@@ -61,7 +61,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         return `
     <section class="event">
     <div class="event--name">Event name: ${eventObj.name}</div>
-    <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()} ${eventObj.date.getFullYear()}</div>
+    <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location">Event location: ${eventObj.location}</div>
     <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
@@ -70,7 +70,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         return `
         <section class="event">
         <div class="event--name">Event name: ${eventObj.name}</div>
-        <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()} ${eventObj.date.getFullYear()}</div>
+        <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
         <div class="event--location">Event location: ${eventObj.location}</div>
         </section>
         `   
