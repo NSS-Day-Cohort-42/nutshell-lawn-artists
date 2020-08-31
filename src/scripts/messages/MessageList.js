@@ -35,6 +35,7 @@ const render = () => {
   const allMessages = useMessages()
   
   contentTarget.innerHTML = `
+  <h3 class="header messages-header"><strong>Message Board</strong></h3>
   ${allMessages.map(m => MessageCard(m)).join("")}
   ${messageForm()}
   `
@@ -43,6 +44,7 @@ const render = () => {
 
 const messageForm = () => {
   return `
+  
   <input type="text" id="message-input"  placeHolder="...">
   <button id="message-submit-button">Send</button>
   `

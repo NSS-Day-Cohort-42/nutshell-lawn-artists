@@ -10,5 +10,8 @@
 }
 
 #logo-image {
-  width: 12rem;
+  width: 100%;
+}
+.logout-button {
+  width: 100%;
 }

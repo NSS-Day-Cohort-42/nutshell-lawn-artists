@@ -41,6 +41,7 @@ const render = () => {
   contentTarget.innerHTML = `
   ${friendSearch()}
   <div></div>
+  <h3 class="header friends-header"><strong>Friend List</strong></h3>
   ${userFriendIds.map( f => {
     return FriendCard(f) + "<div></div>"
   }).join("")}
@@ -49,7 +50,10 @@ const render = () => {
 
 const friendSearch = () => {
   return `
+  <div class="friendSearch">
+  <h4 class="header friendSearch-header"><strong>Friend Search</strong></h4>
   <input type="text" id="friend-search-input" placeHolder="Search for a friend">
   <button id="friend-search-submit-button">submit</button>
+  </div>
   `
 }

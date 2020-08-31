@@ -26,11 +26,14 @@ const render = () => {
 
     contentTarget.innerHTML = `
     <section class="taskList">
-        ${
-            userTasks.map(taskObj => {
-                return TaskCardHTML(taskObj)
-            }).reverse().join("")
-        }
+    <h3 class"header task--header"><strong>Tasks</strong></h3>
+        <div class="task">
+            ${
+                userTasks.map(taskObj => {
+                    return TaskCardHTML(taskObj)
+                }).reverse().join("")
+            }
+        </div>    
     </section>
     `
 }
