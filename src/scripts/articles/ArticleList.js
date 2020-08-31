@@ -8,20 +8,27 @@ const articleListTarget = document.querySelector(".news-container")
 const createArticleButton = document.querySelector(".create-container")
 
 eventHub.addEventListener("articlesStateChanged", () => {
-  ListArticles()
+  renderArticles()
 })
 
 export const ListArticles = () => {
   getUsers()
     .then(getArticles)
-    .then( () => renderArticles())
+    .then( () => {
+      renderArticles()
+      renderCreateButton()
+    })
 }
 
-export const renderArticles = () => {
+const renderCreateButton = () => {
 
   createArticleButton.innerHTML += `
   <button class="btn btn-create-article" id="createArticleBtn">Create Article</button>
   `
+  
+}
+
+const renderArticles = () => {
   const articles = useArticles()
   articleListTarget.innerHTML = articles.map( a => ArticleCard(a)).join("")
 }
