@@ -10,7 +10,6 @@ eventHub.addEventListener("click", e => {
     const articleTitle = document.querySelector(".art-title-input")
     const articleSynopsis = document.querySelector(".art-synopsis-input")
     const articleUrl = document.querySelector(".art-url-input")
-    debugger
 
     if (hiddenArticleId === "0") {
       const newArticle = {
