@@ -5,9 +5,6 @@ import {useFriendsByUserId, getFriends, useFriends} from "../friends/FriendProvi
 const contentTarget=document.querySelector(".event-container")
 const eventHub=document.querySelector(".container")
 
-eventHub.addEventListener("eventChanged", () => {
-  eventList()
-})
 export const eventList=()=>{
     //get events then get friends
     getEvents()
@@ -63,3 +60,8 @@ export const eventList=()=>{
 }
 })
 }
+
+eventHub.addEventListener("eventChanged",event=>{
+    contentTarget.innerHTML=""
+    eventList()  
+})
