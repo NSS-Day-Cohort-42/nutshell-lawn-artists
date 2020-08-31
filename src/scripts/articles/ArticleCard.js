@@ -18,7 +18,7 @@ export const ArticleCard = ( articleEntry ) => {
 export const ArticleEditButton = ( articleEntry ) => {
   if(articleEntry.userId === parseInt(sessionStorage.getItem("activeUser"))) {
     return `
-    <button class="btn art-edit art--${ articleEntry.id }" id="art" type="button">
+    <button class="btn art-edit" id="artEdit--${ articleEntry.id }" type="button">
       Edit
     </button>
     `
@@ -29,5 +29,31 @@ export const ArticleEditButton = ( articleEntry ) => {
 }
 
 eventHub.addEventListener("click", e => {
-  //listens for click event on edit article button and opens pop-up box with edit form
-  })
+  if (e.target.id.startsWith("artEdit--")) {
+
+    const artId = e.target.id.split("--")[1]
+
+    const editArticleButtonClicked = new CustomEvent("editArticleClicked", {
+      detail: {
+        articleId: artId
+      }
+    })
+    eventHub.dispatchEvent(editArticleButtonClicked)
+  }
+})
+
+eventHub.addEventListener("click", e => {
+  if (e.target.id.startsWith("artDelete--")) {
+
+    const artId = e.target.id.split("--")[1]
+
+    const deleteArticleButtonClicked = new CustomEvent("deleteArticleClicked", {
+      detail: {
+        articleId: artId
+      }
+    })
+    eventHub.dispatchEvent(deleteArticleButtonClicked)
+  }
+})
+
+

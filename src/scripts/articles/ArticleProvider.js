@@ -31,6 +31,8 @@ export const editArticle = (articleId, editArticleObject) => {
       },
       body: JSON.stringify(editArticleObject)
   })
+  .then(getArticles)
+      .then(dispatchArticlesStateChangeEvent)
 }
 
 export const getSingleArticle = (articleId) => {
