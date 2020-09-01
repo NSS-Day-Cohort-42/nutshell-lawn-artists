@@ -152,6 +152,11 @@
       "id": 3,
       "userID": 1,
       "following": 4
+    },
+    {
+      "userID": 1,
+      "following": 2,
+      "id": 4
     }
   ],
   "messages": [

@@ -1,4 +1,4 @@
-import { getArticles, useArticles } from "./ArticleProvider.js"
+import { getArticles, useArticles, useArticlesByUserId } from "./ArticleProvider.js"
 import { getUsers } from "../users/UserProvider.js"
 import { ArticleCard } from "./ArticleCard.js"
 import {  useFriendsByUserId } from "../friends/FriendProvider.js"
@@ -30,14 +30,16 @@ const renderCreateButton = () => {
 }
 
 const renderArticles = () => {
-
   const articles = useArticles()
   const usersFriends = useFriendsByUserId(sessionStorage.activeUser)
   const userFriendIds = usersFriends.map(f => f.following)
 
-  const friendsArticles = userFriendIds.map(f => {
-    return ArticleCard(f)
-  }).join("")
+  let friendsArticles = []
+  userFriendIds.forEach(f => {
+    useArticlesByUserId(f).forEach(article => {
+      friendsArticles.push(article)
+    })
+  })
 
   const usersArticles = articles.filter(article => {
     if(article.userId === parseInt(sessionStorage.activeUser)) {
@@ -46,5 +48,8 @@ const renderArticles = () => {
   })
 
   articleListTarget.innerHTML = usersArticles.map( a => ArticleCard(a)).join("")
-  articleListTarget.innerHTML += friendsArticles
+  articleListTarget.innerHTML += friendsArticles.map( a => ArticleCard(a)).join("")
 }
+
+//define new array var
+//.forEach loop over user friend ids, .push the articles into the new var

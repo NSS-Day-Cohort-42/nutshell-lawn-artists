@@ -35,9 +35,17 @@ export const editArticle = (articleId, editArticleObject) => {
       .then(dispatchArticlesStateChangeEvent)
 }
 
-export const getSingleArticle = (articleId) => {
-  return fetch(`http://localhost:8088/articles/${articleId}`)
-      .then(response => response.json())
+export const useArticlesByUserId = (userId) => {
+  userId = parseInt(userId)
+  //filters down articles to only display articles that match the userId passed in
+  return articles.filter((a) => {
+    if(a.userId === userId) {
+      return true
+    }
+    else{
+      return false
+    }
+  })
 }
 
 export const deleteArticle = (articleId) => {
