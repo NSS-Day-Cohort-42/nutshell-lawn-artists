@@ -41,6 +41,12 @@
       "email": "brown@lee.com",
       "password": "dad",
       "id": 7
+    },
+    {
+      "username": "Gabby",
+      "email": "g",
+      "password": "gabby",
+      "id": 8
     }
   ],
   "articles": [
@@ -78,6 +84,41 @@
       "synopsis": "They're everywhere!",
       "url": "www.google.com",
       "id": 5
+    },
+    {
+      "userId": 8,
+      "title": "Crop Circles - Alien Lawn Art?",
+      "synopsis": "Are they here to probe our brains, or is it something more?",
+      "url": "google.com",
+      "id": 6
+    },
+    {
+      "userId": 8,
+      "title": "What is Grass?",
+      "synopsis": "Philosophical reflections of an inspired artist.",
+      "url": "",
+      "id": 7
+    },
+    {
+      "userId": 8,
+      "title": "All about Gabby's yard.",
+      "synopsis": "",
+      "url": "",
+      "id": 8
+    },
+    {
+      "userId": 8,
+      "title": "Gabby's yard is the best!",
+      "synopsis": "",
+      "url": "",
+      "id": 9
+    },
+    {
+      "userId": 8,
+      "title": "Gabby, gabby gabby!",
+      "synopsis": "",
+      "url": "",
+      "id": 10
     }
   ],
   "events": [
@@ -103,6 +144,14 @@
       "location": "Stream, DN",
       "zipCode": "33631",
       "id": 3
+    },
+    {
+      "userId": 8,
+      "name": "Party at Gabby's",
+      "date": "2020-09-17",
+      "location": "Ashville, NC",
+      "zipCode": "28803",
+      "id": 4
     }
   ],
   "tasks": [
@@ -140,6 +189,13 @@
       "description": "Only Todd should be able to see this",
       "date": "2020-08-27",
       "id": 5
+    },
+    {
+      "userId": 8,
+      "title": "Shameless Self promotion",
+      "description": "It's a moral dilemma!",
+      "date": "2020-09-02",
+      "id": 6
     }
   ],
   "friends": [
