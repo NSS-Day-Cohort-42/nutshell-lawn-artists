@@ -54,8 +54,8 @@ const friendSearch = () => {
   return `
   <div class="friendSearch">
   <h4 class="header friendSearch-header"><strong>Friend Search</strong></h4>
-  <input class="input input--friend- search" type="text" id="friend-search-input" placeHolder="Search for a friend">
-  <button class="btn" id="friend-search-submit-button">submit</button>
+  <input class="input input--friend-search" type="text" id="friend-search-input" placeHolder="Search for a friend">
+  <button class="btn btn-fs-submit" id="friend-search-submit-button">submit</button>
   </div>
   `
 }
