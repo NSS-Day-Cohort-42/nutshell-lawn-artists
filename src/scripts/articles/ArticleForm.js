@@ -20,7 +20,9 @@ eventHub.addEventListener("click", e => {
       }
 
       saveArticle(newArticle)
-        .then(ArticleForm)
+      .then( () => {
+        popup.classList.remove("visible")
+      })
     }
     else {
       const updatedArticle = {
@@ -31,6 +33,10 @@ eventHub.addEventListener("click", e => {
       }
 
       editArticle(hiddenArticleId, updatedArticle)
+      .then( () => {
+        popup.classList.remove("visible")
+      })
+
     }
   }
   else if (e.target.classList.contains("btn-close-form")) {
@@ -53,6 +59,7 @@ export const ArticleForm = () => {
 eventHub.addEventListener("deleteArticleClicked", ce => {
   const articleId = ce.detail.articleId
   deleteArticle(articleId)
+  popup.classList.remove("visible")
 })
 eventHub.addEventListener("editArticleClicked", ce => {
 
