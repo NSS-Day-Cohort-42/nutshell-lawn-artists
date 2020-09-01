@@ -8,9 +8,12 @@ const eventHub = document.querySelector(".container")
 const createTaskTarget = document.querySelector(".create-container")
 
 eventHub.addEventListener("taskStateChanged", () => {
-    TaskList()
+    render()
 })
 
+const renderButton = () => {
+    createTaskTarget.innerHTML += `<button id="createTask">Create Task</button>`
+}
 
 const render = () => {
     const userTasks = useTasks().filter((task) => {
@@ -20,15 +23,17 @@ const render = () => {
             return false
         }
     })
-    createTaskTarget.innerHTML += `<button id="createTask">Create Task</button>`
 
     contentTarget.innerHTML = `
     <section class="taskList">
-        ${
-            userTasks.map(taskObj => {
-                return TaskCardHTML(taskObj)
-            }).reverse().join("")
-        }
+    <h3 class"header task--header"><strong>Tasks</strong></h3>
+        <div class="task">
+            ${
+                userTasks.map(taskObj => {
+                    return TaskCardHTML(taskObj)
+                }).reverse().join("")
+            }
+        </div>    
     </section>
     `
 }
@@ -36,7 +41,11 @@ const render = () => {
 export const TaskList = () => {
     getUsers()
     .then(getTasks)
-    .then(render)
+    .then(() => {
+        render()
+        renderButton()
+    })
+
     
 }
 // task.userId === sessionStorage.getItem("activeUser")

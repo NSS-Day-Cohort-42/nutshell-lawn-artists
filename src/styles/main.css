@@ -23,3 +23,12 @@
 body{
   background-color: #eae0cc;
 }
+
+h3 {
+  display: flex;
+  justify-content: center;
+}
+h4 {
+  display: flex;
+  justify-content: center;
+}
