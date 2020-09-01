@@ -61,7 +61,7 @@
     {
       "url": "http://www.google.com",
       "title": "Lawns: It's not easy being green",
-      "synopsis": "A memoir",
+      "synopsis": "A memoir.",
       "userId": 4,
       "id": 3
     },
@@ -78,6 +78,27 @@
       "synopsis": "They're everywhere!",
       "url": "www.google.com",
       "id": 5
+    },
+    {
+      "userId": 7,
+      "title": "Sun! Food? or Foe?",
+      "synopsis": "Article describing the various ways plants are impacted by the Sun.",
+      "url": "www.google.com",
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "title": "Plants Code Too!",
+      "synopsis": "How plants have hacked their way into the mainframe of life.",
+      "url": "www.google.com",
+      "id": 7
+    },
+    {
+      "userId": 7,
+      "title": "Have You Hugged A Plant Today?",
+      "synopsis": "An article describing the health benefits of hugging trees, grass, and even flowers! Disclaimer: Do not hug cacti!",
+      "url": "www.google.com",
+      "id": 8
     }
   ],
   "events": [
@@ -103,6 +124,14 @@
       "location": "Stream, DN",
       "zipCode": "33631",
       "id": 3
+    },
+    {
+      "userId": 7,
+      "name": "Steve's Plant Party! Bring your own dirt.",
+      "date": "2020-09-19",
+      "location": "Steve's Place",
+      "zipCode": "20001",
+      "id": 4
     }
   ],
   "tasks": [
@@ -136,10 +165,24 @@
     },
     {
       "userId": 5,
-      "title": "Todd's Test Task",
-      "description": "Only Todd should be able to see this",
+      "title": "Tom's Test Task",
+      "description": "Only Tom should be able to see this",
       "date": "2020-08-27",
       "id": 5
+    },
+    {
+      "userId": 7,
+      "title": "Petunia Time!",
+      "description": "Gotta plant those petunias.",
+      "date": "2020-09-12",
+      "id": 6
+    },
+    {
+      "userId": 7,
+      "title": "Make A Shrub Sculpture",
+      "description": "It should look like a giraffe.",
+      "date": "2020-08-30",
+      "id": 7
     }
   ],
   "friends": [
