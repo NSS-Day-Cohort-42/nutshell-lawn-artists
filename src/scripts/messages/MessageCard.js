@@ -11,10 +11,10 @@ export const MessageCard = message => {
   }
   
   return `
-    <div class="message-bubble ${messageOwner}">
+    <span class="message-bubble ${messageOwner}">
       ${FriendCard(message.userId)}
       <span class="message-text">: </span>
       <span class="message-text">${message.message}</span>
-    </div>
+    </span>
   `
 }

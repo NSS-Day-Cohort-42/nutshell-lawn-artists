@@ -15,6 +15,6 @@ export const ListLogout = () => {
   <div>
     <img src="../images/logo.png" id="logo-image">
   </div>
-  <button id="logout-button">Logout</button>
+  <button class="logout-button" id="logout-button">Logout</button>
   `
 }

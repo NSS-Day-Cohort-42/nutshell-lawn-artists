@@ -39,6 +39,7 @@ export const eventList=()=>{
 
                 )
         })
+        contentTarget.innerHTML=`<h3 class="header events-header"><strong>Event List</strong></h3>`
         if (correctEvents===undefined||correctEvents.length===0){
             contentTarget.innerHTML=`
             <p>There are no events right now</p>
