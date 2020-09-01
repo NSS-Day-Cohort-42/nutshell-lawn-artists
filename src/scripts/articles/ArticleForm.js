@@ -1,4 +1,4 @@
-import { saveArticle, getArticles, editArticle, deleteArticle } from "./ArticleProvider.js";
+import { saveArticle, getArticles, editArticle, deleteArticle, useArticleById } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".container")
 const popup = document.querySelector(".popup-container")
@@ -55,12 +55,21 @@ eventHub.addEventListener("deleteArticleClicked", ce => {
   deleteArticle(articleId)
 })
 eventHub.addEventListener("editArticleClicked", ce => {
+
   const articleId = ce.detail.articleId
   renderArticleForm(articleId)
   popup.innerHTML += `
     <button class="btn btn-delete-article" id="artDelete--${articleId}">
       Delete Article
     </button>`
+  const article = useArticleById(articleId)
+  const titleTarget = document.querySelector("#articleTitle")
+  const synopsisTarget = document.querySelector("#articleSynopsis")
+  const urlTarget = document.querySelector("#articleUrl")
+
+  titleTarget.value = article.title
+  synopsisTarget.value = article.synopsis
+  urlTarget.value = article.url
   popup.classList.add("visible")
 })
 
@@ -76,4 +85,5 @@ const renderArticleForm = (articleId) => {
       <button class="btn btn-close-form" id="closeForm">Cancel</button>
     </section>
     `
+  
 }
