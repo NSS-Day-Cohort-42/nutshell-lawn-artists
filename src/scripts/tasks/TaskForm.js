@@ -5,11 +5,11 @@ const contentTarget = document.querySelector(".popup-container")
 
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "saveTask") {
-        
+
         const taskName = document.querySelector("#taskName")
         const taskDate = document.querySelector("#taskDate")
         const taskDescription = document.querySelector("#taskDescription")
-        
+
         const newTask = {
             userId: parseInt(sessionStorage.getItem("activeUser")),
             title: taskName.value,
@@ -24,7 +24,7 @@ eventHub.addEventListener("click", clickEvent => {
     } else if (clickEvent.target.id === "createTask") {
         contentTarget.classList.add("visible")
         TaskForm()
-    } 
+    }
 })
 
 export const TaskForm = () => {
@@ -36,12 +36,12 @@ export const TaskForm = () => {
 
 const render = () => {
     contentTarget.innerHTML =  `
-    <section class="taskForm">
-        <input type="text" id="taskName" class="taskFormTitle" placeHolder="Enter task title"/>
-        <textarea id="taskDescription" class="taskFormContent" placeHolder="Enter desciption of task"></textarea>           
-        <input type="date" id="taskDate" placeholder="Choose Task End Date" />
-        <button id="saveTask" class="saveTask">Save Task</button>
-        <button id="closeTask">Exit</button>
+    <section class="form taskForm">
+        <input type="text" id="taskName" class="input input--task-title taskFormTitle" placeHolder="Enter task title"/>
+        <textarea id="taskDescription" class="input input-task-content taskFormContent" placeHolder="Enter description of task"></textarea>
+        <input type="date" class="input input--task-date" id="taskDate" placeholder="Choose Task End Date" />
+        <button id="saveTask" class="btn saveTask">Save Task</button>
+        <button class="btn" id="closeTask">Exit</button>
     </section>
-        `
+    `
 }

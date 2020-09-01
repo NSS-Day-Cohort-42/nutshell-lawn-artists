@@ -5,7 +5,7 @@ const buttonTarget=document.querySelector(".create-container")
 const contentTarget=document.querySelector(".popup-container")
 
 export const eventForm=()=>{
-    buttonTarget.innerHTML+=`<button id="eventBtn" class="btn">New event</button>`
+    buttonTarget.innerHTML+=`<button id="eventBtn" class="btn">Create Event</button>`
 }
 
 eventHub.addEventListener("click", event=>{
@@ -20,13 +20,13 @@ eventHub.addEventListener("click", event=>{
     }*/
     if(event.target.id==="eventBtn"){
         contentTarget.innerHTML=`
-    <div id="event--form__content" class="event--form__content">
-    <p>Name of event: <input type="text" class="event--form__input" id="eventName"></p>
-    <p>Date of  event: <input type="date" class="event--form__input" id="eventDate"></p>
-    <p>Location of event: <input type="text" class="event--form__input" id="eventLocation"></p>
-    <p>Event zipcode: <input type="text" class="event--form__input" id="eventZipCode"></p>
-    <button id="event--form__close" class="close">Close event form</button>
-    <button id="create--event">Submit</button>
+    <div id="event--form__content" class="form event--form__content">
+    <p>Name of event: <input type="text" class="input event--form__input input--event-name" id="eventName"></p>
+    <p>Date of  event: <input type="date" class="input event--form__input input--event-date" id="eventDate"></p>
+    <p>Location of event: <input type="text" class="input event--form__input input--event-weather-location" id="eventLocation"></p>
+    <p>Event zipcode: <input type="text" class="input event--form__input input--event-zipcode" id="eventZipCode"></p>
+    <button id="event--form__close" class="btn close">Close event form</button>
+    <button class="btn" id="create--event">Submit</button>
     </div>
     `
     contentTarget.classList.add("visible")
