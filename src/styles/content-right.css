@@ -6,7 +6,7 @@
 
 .strikethrough {
   text-decoration: line-through
-} 
+}
 
 .messages {
   padding: 5px;
@@ -29,11 +29,37 @@
   float: right;
   background-color: #798478;
   align-self: flex-end;
-
+  max-width: 70%;
+  margin: .25rem 0;
+  padding: .35rem .35rem;
+  flex-wrap: wrap;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .other-user-message {
   display: inline-flex;
   float: left;
   background-color: #a0a083;
+  align-self: flex-start;
+  max-width: 70%;
+  margin: .25rem 0;
+  padding: .35rem .35rem;
+  flex-wrap: wrap;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.message-text {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: medium;
+}
+
+.f-card {
+  color: white;
+  font-weight: 350;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

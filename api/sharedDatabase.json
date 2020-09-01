@@ -164,6 +164,16 @@
       "id": 1,
       "userId": 3,
       "message": "Hi!"
+    },
+    {
+      "userId": 1,
+      "message": "How's it going?",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "message": "... uh hello?",
+      "id": 3
     }
   ]
 }

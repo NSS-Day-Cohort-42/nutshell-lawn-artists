@@ -6,7 +6,7 @@ const contentTarget = document.querySelector(".friend-container")
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "friend-search-submit-button") {
-    const searchField = document.querySelector("#friend-search-input") 
+    const searchField = document.querySelector("#friend-search-input")
     const findResult = findUserByUsername(searchField.value)
     if (findResult) {
       const friendAction = new CustomEvent("friendAction", {
@@ -14,7 +14,7 @@ eventHub.addEventListener("click", clickEvent => {
           userId: parseInt(findResult.id)
         }
       })
-      
+
       eventHub.dispatchEvent(friendAction)
     }
     else {
@@ -37,7 +37,7 @@ export const ListFriends = () => {
 const render = () => {
   const userFriends = useFriendsByUserId(sessionStorage.activeUser)
   const userFriendIds = userFriends.map(f => f.following)
-  
+
   contentTarget.innerHTML = `
   ${friendSearch()}
   <div></div>
@@ -54,8 +54,8 @@ const friendSearch = () => {
   return `
   <div class="friendSearch">
   <h4 class="header friendSearch-header"><strong>Friend Search</strong></h4>
-  <input type="text" id="friend-search-input" placeHolder="Search for a friend">
-  <button id="friend-search-submit-button">submit</button>
+  <input class="input input--friend- search" type="text" id="friend-search-input" placeHolder="Search for a friend">
+  <button class="btn" id="friend-search-submit-button">submit</button>
   </div>
   `
 }

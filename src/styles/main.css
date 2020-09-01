@@ -32,3 +32,20 @@ h4 {
   display: flex;
   justify-content: center;
 }
+
+.btn {
+  background-color: transparent;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.btn--friend-card {
+  border: none
+}

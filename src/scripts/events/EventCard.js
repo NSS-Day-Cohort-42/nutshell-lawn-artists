@@ -40,8 +40,8 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
             monthString="December"
             break
     }
-    
-    
+
+
     if(isFirst&&isOwn){
         return `
         <section class="event--first">
@@ -50,7 +50,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
     <div class="event--location--first" id="event-location--${eventObj.id}">${eventObj.location}</div>
     <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
     <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
-    <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
+    <button class="btn event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
     }else if(isFirst){
@@ -71,7 +71,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
     <div class="event--location" id="event-location--${eventObj.id}">${eventObj.location}</div>
     <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
     <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
-    <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
+    <button class="btn event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
     }else{
@@ -83,7 +83,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
         <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
         </section>
-        `   
+        `
     }
 }
 

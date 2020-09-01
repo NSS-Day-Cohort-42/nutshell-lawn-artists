@@ -12,7 +12,7 @@ eventHub.addEventListener("taskStateChanged", () => {
 })
 
 const renderButton = () => {
-    createTaskTarget.innerHTML += `<button id="createTask">Create Task</button>`
+    createTaskTarget.innerHTML += `<button class="btn" id="createTask">Create Task</button>`
 }
 
 const render = () => {
@@ -33,7 +33,7 @@ const render = () => {
                     return TaskCardHTML(taskObj)
                 }).reverse().join("")
             }
-        </div>    
+        </div>
     </section>
     `
 }
@@ -46,6 +46,6 @@ export const TaskList = () => {
         renderButton()
     })
 
-    
+
 }
 // task.userId === sessionStorage.getItem("activeUser")
