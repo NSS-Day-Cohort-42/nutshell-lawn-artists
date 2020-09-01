@@ -36,8 +36,12 @@ const render = () => {
   
   contentTarget.innerHTML = `
   <h3 class="header messages-header"><strong>Message Board</strong></h3>
-  ${allMessages.map(m => MessageCard(m)).join("")}
-  ${messageForm()}
+  <div class="message-container">
+    <div class="messages">
+      ${allMessages.map(m => MessageCard(m)).join("")}
+    </div>
+    ${messageForm()}
+  </div>
   `
 }
 
@@ -46,6 +50,6 @@ const messageForm = () => {
   return `
   
   <input type="text" id="message-input"  placeHolder="...">
-  <button id="message-submit-button">Send</button>
+  <button class="message-submit-button" id="message-submit-button">Send</button>
   `
 }

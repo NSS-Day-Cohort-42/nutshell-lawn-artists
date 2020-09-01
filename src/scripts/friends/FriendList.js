@@ -42,9 +42,11 @@ const render = () => {
   ${friendSearch()}
   <div></div>
   <h3 class="header friends-header"><strong>Friend List</strong></h3>
-  ${userFriendIds.map( f => {
-    return FriendCard(f) + "<div></div>"
-  }).join("")}
+  <div class="friendsList">
+    ${userFriendIds.map( f => {
+      return FriendCard(f) + "<div></div>"
+    }).join("")}
+  </div>
   `
 }
 
