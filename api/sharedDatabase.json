@@ -51,10 +51,10 @@
   ],
   "articles": [
     {
-      "url": "http://www.google.com",
-      "title": "What Kind Of Lawn Art Are You?",
-      "synopsis": "Buzzfeed Quiz",
       "userId": 1,
+      "title": "What Kind Of Lawn r u?",
+      "synopsis": "Buzzfed Quizt",
+      "url": "http://www.google.com",
       "id": 1
     },
     {
@@ -185,13 +185,6 @@
   ],
   "tasks": [
     {
-      "userId": 1,
-      "title": "Monica's Test Task",
-      "description": "Only Monica should be able to see this",
-      "date": "2020-08-26",
-      "id": 1
-    },
-    {
       "userId": 2,
       "title": "Austin's Test Task",
       "description": "Only Austin should be able to see this",
@@ -239,6 +232,27 @@
       "description": "It's a moral dilemma!",
       "date": "2020-09-02",
       "id": 8
+    },
+    {
+      "userId": 1,
+      "title": "Trim the Tulips",
+      "description": "Gotta keep those tulips trimmed! ",
+      "date": "2020-09-06",
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "title": "Water the lawn.",
+      "description": "Stay hydrated!",
+      "date": "2020-09-05",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "title": "Plant Roses",
+      "description": "Plant rose bushes along the walkway.",
+      "date": "2020-08-30",
+      "id": 11
     }
   ],
   "friends": [
