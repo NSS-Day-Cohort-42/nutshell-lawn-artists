@@ -105,39 +105,41 @@
       "synopsis": "An article describing the health benefits of hugging trees, grass, and even flowers! Disclaimer: Do not hug cacti!",
       "url": "www.google.com",
       "id": 8
+    },
+    {
       "userId": 8,
       "title": "Crop Circles - Alien Lawn Art?",
       "synopsis": "Are they here to probe our brains, or is it something more?",
       "url": "google.com",
-      "id": 6
+      "id": 9
     },
     {
       "userId": 8,
       "title": "What is Grass?",
       "synopsis": "Philosophical reflections of an inspired artist.",
       "url": "",
-      "id": 7
+      "id": 10
     },
     {
       "userId": 8,
       "title": "All about Gabby's yard.",
       "synopsis": "",
       "url": "",
-      "id": 8
+      "id": 11
     },
     {
       "userId": 8,
       "title": "Gabby's yard is the best!",
       "synopsis": "",
       "url": "",
-      "id": 9
+      "id": 12
     },
     {
       "userId": 8,
       "title": "Gabby, gabby gabby!",
       "synopsis": "",
       "url": "",
-      "id": 10
+      "id": 13
     }
   ],
   "events": [
@@ -165,20 +167,20 @@
       "id": 3
     },
     {
-<<<<<<< HEAD
       "userId": 7,
       "name": "Steve's Plant Party! Bring your own dirt.",
       "date": "2020-09-19",
       "location": "Steve's Place",
       "zipCode": "20001",
-=======
+      "id": 4
+    },
+    {
       "userId": 8,
       "name": "Party at Gabby's",
       "date": "2020-09-17",
       "location": "Ashville, NC",
       "zipCode": "28803",
->>>>>>> 1966dfb4368c774dac6d8f8508ad5eed57cf4ee2
-      "id": 4
+      "id": 5
     }
   ],
   "tasks": [
@@ -218,7 +220,6 @@
       "id": 5
     },
     {
-<<<<<<< HEAD
       "userId": 7,
       "title": "Petunia Time!",
       "description": "Gotta plant those petunias.",
@@ -231,13 +232,13 @@
       "description": "It should look like a giraffe.",
       "date": "2020-08-30",
       "id": 7
-=======
+    },
+    {
       "userId": 8,
       "title": "Shameless Self promotion",
       "description": "It's a moral dilemma!",
       "date": "2020-09-02",
-      "id": 6
->>>>>>> 1966dfb4368c774dac6d8f8508ad5eed57cf4ee2
+      "id": 8
     }
   ],
   "friends": [
@@ -270,28 +271,33 @@
       "userID": 1,
       "following": 4,
       "id": 9
+    },
+    {
+      "userID": 1,
+      "following": 7,
+      "id": 10
     }
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "message": "Greetings"
-    },
-    {
-      "id": 1,
-      "userId": 3,
-      "message": "Hi!"
-    },
-    {
       "userId": 3,
       "message": "Hey!",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "message": "This app is so great!",
       "id": 2
     },
     {
-      "userId": 1,
-      "message": "... uh hello?",
+      "userId": 7,
+      "message": "I agree wholeheartedly!",
       "id": 3
+    },
+    {
+      "userId": 8,
+      "message": "Hey guys follow me for some amaaaazing articles!",
+      "id": 4
     }
   ]
 }
