@@ -22,15 +22,26 @@
 
 body{
   background-color: #eae0cc;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
+h2 {
+  font-weight: 400;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
 h3 {
   display: flex;
   justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 h4 {
   display: flex;
   justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 .btn {
@@ -48,4 +59,10 @@ h4 {
 
 .btn--friend-card {
   border: none
+}
+
+.card {
+  border: solid black 3px;
+  margin: .5rem 0;
+  padding: .5rem .5rem;
 }

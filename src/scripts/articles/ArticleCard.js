@@ -3,7 +3,7 @@ const eventHub = document.querySelector(".container")
 
 export const ArticleCard = ( articleEntry ) => {
   return `
-    <section class="art--${ articleEntry.id }">
+    <section class="card card--article art--${ articleEntry.id }">
       <a class="art-url" href="${ articleEntry.url }">
         ${articleEntry.title}
       </a>

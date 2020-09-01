@@ -48,8 +48,9 @@ const render = () => {
 
 const messageForm = () => {
   return `
-
-  <input type="text" class="input input--message" id="message-input"  placeHolder="...">
-  <button class="btn message-submit-button" id="message-submit-button">Send</button>
+  <div class="form--message">
+    <input type="text" class="input input--message" id="message-input"  placeHolder="...">
+    <button class="btn message-submit-button" id="message-submit-button">Send</button>
+  </div>
   `
 }

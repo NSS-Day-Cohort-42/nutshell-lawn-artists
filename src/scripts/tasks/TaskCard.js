@@ -16,7 +16,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 
 export const TaskCardHTML = (task) => {
     return `
-    <section id="card card--tasktask--${task.id}" class="taskCard">
+    <section class="card-details" id="task--${task.id}">
         <div class="card-details task--name">${task.title}</div>
         <div class="card-details task--desciption">${task.description}</div>
         <div class="card-details task--date">${task.date}</div>
