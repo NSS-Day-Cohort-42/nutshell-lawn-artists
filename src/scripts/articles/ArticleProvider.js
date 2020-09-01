@@ -31,6 +31,8 @@ export const editArticle = (articleId, editArticleObject) => {
       },
       body: JSON.stringify(editArticleObject)
   })
+  .then(getArticles)
+      .then(dispatchArticlesStateChangeEvent)
 }
 
 export const getSingleArticle = (articleId) => {
@@ -53,6 +55,11 @@ export const deleteArticle = (articleId) => {
 
 export const useArticles = () => {
   return articles.slice()
+}
+
+export const useArticleById = articleId => {
+  articleId = parseInt(articleId)
+  return articles.find( a => a.id === articleId)
 }
 
 export const getArticles = () => {
