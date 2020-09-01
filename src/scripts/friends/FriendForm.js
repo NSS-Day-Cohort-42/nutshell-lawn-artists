@@ -29,20 +29,30 @@ eventHub.addEventListener("click", clickEvent => {
 
 const render = targetUserID => {
   const targetUser = findUserByUserId(targetUserID)
-  contentTarget.innerHTML = `
-  <div class ="selected-friend">${targetUser.username}</div>
-  `
-  
+  // contentTarget.innerHTML = `
+  // <!-- <div class ="selected-friend"></div> -->
+  // `
+
   if (isFriendOfCurrentUser(targetUserID)) {
-    contentTarget.innerHTML += `
-    <button class="btn" id="remove-friend--${targetUserID}">Remove Friend</button>
+    contentTarget.innerHTML = `
+    <div class="form form--friend form--friend-remove">
+    <h4 class="h4 heading heading--friend-form">
+      You're currently following ${targetUser.username}.
+    </h4>
+    <button class="btn" id="remove-friend--${targetUserID}">Unfollow ${targetUser.username}</button>
     <button class="btn" id="cancel-friend-change">Cancel</button>
+    </div>
   `
   }
   else {
-    contentTarget.innerHTML += `
-    <button class="btn" id="add-friend--${targetUserID}">Add Friend</button>
+    contentTarget.innerHTML = `
+    <div class="form form--friend form--friend-new">
+    <h4 class="h4 heading heading--friend-form">
+      You are not following ${targetUser.username} yet. Would you like to follow them?
+    </h4>
+    <button class="btn" id="add-friend--${targetUserID}">Follow ${targetUser.username}</button>
     <button class="btn" id="cancel-friend-change">Cancel</button>
+    </div>
   `
   }
 

@@ -142,18 +142,7 @@
       "id": 5
     }
   ],
-  "friends": [
-    {
-      "id": 2,
-      "userID": 1,
-      "following": 3
-    },
-    {
-      "id": 3,
-      "userID": 1,
-      "following": 4
-    }
-  ],
+  "friends": [],
   "messages": [
     {
       "id": 1,

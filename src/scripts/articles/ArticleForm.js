@@ -83,10 +83,10 @@ eventHub.addEventListener("editArticleClicked", ce => {
 const renderArticleForm = (articleId) => {
 
   popup.innerHTML = `
-    <section class="form-create-art">
+    <section class="form form-create-art">
       <input type="hidden" class="input art-hidden-id" name="articleId" id="articleId" value="${articleId}"></input>
       <input type="text" class="input art-title-input" id="articleTitle" placeholder="Article title"></input>
-      <input type="text" class="input art-synopsis-input" id="articleSynopsis" placeholder="Article Synopsis"></input>
+      <textarea type="text" class="input art-synopsis-input" id="articleSynopsis" placeholder="Article Synopsis"></textarea>
       <input type="url" class="input art-url-input" id="articleUrl" placeholder="Article URL"></input>
       <button class="btn btn-save-art" id="saveArticle">Save Article</button>
       <button class="btn btn-close-form" id="closeForm">Cancel</button>

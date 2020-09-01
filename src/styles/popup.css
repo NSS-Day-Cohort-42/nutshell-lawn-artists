@@ -1,16 +1,17 @@
 .popup-container {
   visibility: hidden;
+  display: flex;
   border: solid black 3px;
-  position: fixed; /* Stay in place */
-  z-index: 3; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  position: absolute;
+  z-index: 3;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #c9ada178;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #c9ada196;
   align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -18,7 +19,7 @@
   visibility: visible;
 }
 
-.form-create-art {
+.form {
   display: flex;
   flex-flow: column;
   border: solid black 3px;
@@ -28,7 +29,7 @@
   width: 50%;
   height: auto;
   background-color: #c9ada1;
-  position: fixed;
-  left: 25%;
+  position: relative;
+
   padding: 4rem;
 }
