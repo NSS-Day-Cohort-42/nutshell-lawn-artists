@@ -54,3 +54,9 @@ const renderArticles = () => {
   articleListTarget.innerHTML = usersArticles.map( a => ArticleCard(a)).join("")
   articleListTarget.innerHTML += friendsArticles.map( a => ArticleCard(a)).join("")
 }
+  const arrayOfArticles = articles.map( a => ArticleCard(a)).join("")
+
+  articleListTarget.innerHTML = `
+  <h3 class="header articles-header"><strong>Articles</strong></h3>
+  ${arrayOfArticles}`
+}
