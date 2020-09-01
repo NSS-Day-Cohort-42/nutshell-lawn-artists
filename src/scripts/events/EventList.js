@@ -49,10 +49,10 @@ export const eventList=()=>{
             correctEvents.forEach(eventObj=>{
                 if(isFirst&&eventObj.userId===parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)
-                    isFirst=false 
+                    isFirst=false
                 }else if(isFirst&&eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
-                    isFirst=false 
+                    isFirst=false
                 }else if(eventObj.userId!==parseInt(sessionStorage.getItem("activeUser"))){
                     contentTarget.innerHTML+=eventHTML(eventObj, isFirst, false)
                 }else{contentTarget.innerHTML+=eventHTML(eventObj, isFirst, true)}
@@ -64,5 +64,5 @@ export const eventList=()=>{
 
 eventHub.addEventListener("eventChanged",event=>{
     contentTarget.innerHTML=""
-    eventList()  
+    eventList()
 })

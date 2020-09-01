@@ -142,7 +142,38 @@
       "id": 5
     }
   ],
-  "friends": [],
+  "friends": [
+    {
+      "userID": 1,
+      "following": 2,
+      "id": 4
+    },
+    {
+      "userID": 3,
+      "following": 1,
+      "id": 5
+    },
+    {
+      "userID": 3,
+      "following": 4,
+      "id": 6
+    },
+    {
+      "userID": 3,
+      "following": 2,
+      "id": 7
+    },
+    {
+      "userID": 1,
+      "following": 3,
+      "id": 8
+    },
+    {
+      "userID": 1,
+      "following": 4,
+      "id": 9
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -155,8 +186,8 @@
       "message": "Hi!"
     },
     {
-      "userId": 1,
-      "message": "How's it going?",
+      "userId": 3,
+      "message": "Hey!",
       "id": 2
     },
     {
