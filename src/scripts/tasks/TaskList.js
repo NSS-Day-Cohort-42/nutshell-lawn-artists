@@ -12,7 +12,7 @@ eventHub.addEventListener("taskStateChanged", () => {
 })
 
 const renderButton = () => {
-    createTaskTarget.innerHTML += `<button id="createTask">Create Task</button>`
+    createTaskTarget.innerHTML += `<button class="btn" id="createTask">Create Task</button>`
 }
 
 const render = () => {
@@ -27,13 +27,13 @@ const render = () => {
     contentTarget.innerHTML = `
     <section class="taskList">
     <h3 class"header task--header"><strong>Tasks</strong></h3>
-        <div class="task">
+        <div class="card card--task task">
             ${
                 userTasks.map(taskObj => {
                     return TaskCardHTML(taskObj)
                 }).reverse().join("")
             }
-        </div>    
+        </div>
     </section>
     `
 }
@@ -46,6 +46,6 @@ export const TaskList = () => {
         renderButton()
     })
 
-    
+
 }
 // task.userId === sessionStorage.getItem("activeUser")

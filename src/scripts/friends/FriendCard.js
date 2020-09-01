@@ -11,7 +11,7 @@ eventHub.addEventListener("click", clickEvent => {
         userId: parseInt(friendUserId)
       }
     })
-    
+
     eventHub.dispatchEvent(friendAction)
   }
 })
@@ -21,13 +21,13 @@ export const FriendCard = userId => {
   const friendUserName = findUserByUserId(userId).username
 
   let button = ''
-  
+
   if (userId !== currentUserId) {
-    button = `<button class="btn" id="button-friend-action--${userId}">[...]</button>`
+    button = `<button class="btn btn--friend-card" id="button-friend-action--${userId}">[...]</button>`
   }
 
   return `
-  <span class="friend-card--${userId}">
+  <span class="f-card friend-card--${userId}">
     ${friendUserName}
     ${button}
   </span>

@@ -16,7 +16,7 @@ eventHub.addEventListener("showWeatherHasBeenClicked", ce => {
 
 export const dayOfTheWeek = (weather) => {
     const date = new Date(weather.dt*1000)
-    
+
     const daysOfTheWeek = [
         "Sunday",
         "Monday",
@@ -26,9 +26,9 @@ export const dayOfTheWeek = (weather) => {
         "Friday",
         "Saturday"
     ]
-    
+
     const day = date.getDay()
-    
+
     return daysOfTheWeek[day]
 }
 
@@ -45,7 +45,7 @@ const render = () => {
     const day3 = forecastData[16]
     const day4 = forecastData[24]
     const day5 = forecastData[32]
-    
+
     const fiveDayForeCastArray = [day1, day2, day3, day4, day5]
 
     const weatherCards = fiveDayForeCastArray.map((day) => {
@@ -70,9 +70,11 @@ const render = () => {
     }).join("")
 
     contentTarget.innerHTML = `
-    <h2 class="weather-location">${location}</h2>
-    <div class="weatherCards">
+    <div class="weather">
+      <h2 class="h2 weather-location">${location}</h2>
+      <div class="weatherCards">
             ${weatherCards}
     </div>
+  </div>
     `
 }

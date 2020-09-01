@@ -40,22 +40,22 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
             monthString="December"
             break
     }
-    
-    
+
+
     if(isFirst&&isOwn){
         return `
-        <section class="event--first">
+        <section class="card event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
     <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location--first" id="event-location--${eventObj.id}">${eventObj.location}</div>
     <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
     <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
-    <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
+    <button class="btn event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
     }else if(isFirst){
         return `
-        <section class="event--first">
+        <section class="card event--first">
     <div class="event--name--first">Event name: ${eventObj.name}</div>
     <div class="event--date--first">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location--first" id="event-location--${eventObj.id}">${eventObj.location}</div>
@@ -65,13 +65,13 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
     `
     }else if(isOwn){
         return `
-    <section class="event">
+    <section class=" card event">
     <div class="event--name">Event name: ${eventObj.name}</div>
     <div class="event--date">Event date: ${monthString} ${eventObj.date.getDate()}, ${eventObj.date.getFullYear()}</div>
     <div class="event--location" id="event-location--${eventObj.id}">${eventObj.location}</div>
     <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
     <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
-    <button class="event--edit" id="event--edit--${eventObj.id}">Edit</div>
+    <button class="btn event--edit" id="event--edit--${eventObj.id}">Edit</div>
     </section>
     `
     }else{
@@ -83,7 +83,7 @@ export const eventHTML=(eventObj, isFirst, isOwn)=>{
         <div class="zipCode" id="event-zip--${eventObj.id}">${eventObj.zipCode}</div>
         <button class="btn show-weather-btn" id="event-weather--${eventObj.id}">Show Weather</button>
         </section>
-        `   
+        `
     }
 }
 
