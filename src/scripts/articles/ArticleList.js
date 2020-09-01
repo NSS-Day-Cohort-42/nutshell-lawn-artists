@@ -12,6 +12,10 @@ eventHub.addEventListener("articlesStateChanged", () => {
   renderArticles()
 })
 
+eventHub.addEventListener("friendChange", () => {
+  renderArticles()
+})
+
 export const ListArticles = () => {
   getUsers()
     .then(getArticles)
@@ -50,6 +54,3 @@ const renderArticles = () => {
   articleListTarget.innerHTML = usersArticles.map( a => ArticleCard(a)).join("")
   articleListTarget.innerHTML += friendsArticles.map( a => ArticleCard(a)).join("")
 }
-
-//define new array var
-//.forEach loop over user friend ids, .push the articles into the new var
