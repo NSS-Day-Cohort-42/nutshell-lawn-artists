@@ -41,6 +41,12 @@
       "email": "brown@lee.com",
       "password": "dad",
       "id": 7
+    },
+    {
+      "username": "Gabby",
+      "email": "g",
+      "password": "gabby",
+      "id": 8
     }
   ],
   "articles": [
@@ -99,6 +105,39 @@
       "synopsis": "An article describing the health benefits of hugging trees, grass, and even flowers! Disclaimer: Do not hug cacti!",
       "url": "www.google.com",
       "id": 8
+      "userId": 8,
+      "title": "Crop Circles - Alien Lawn Art?",
+      "synopsis": "Are they here to probe our brains, or is it something more?",
+      "url": "google.com",
+      "id": 6
+    },
+    {
+      "userId": 8,
+      "title": "What is Grass?",
+      "synopsis": "Philosophical reflections of an inspired artist.",
+      "url": "",
+      "id": 7
+    },
+    {
+      "userId": 8,
+      "title": "All about Gabby's yard.",
+      "synopsis": "",
+      "url": "",
+      "id": 8
+    },
+    {
+      "userId": 8,
+      "title": "Gabby's yard is the best!",
+      "synopsis": "",
+      "url": "",
+      "id": 9
+    },
+    {
+      "userId": 8,
+      "title": "Gabby, gabby gabby!",
+      "synopsis": "",
+      "url": "",
+      "id": 10
     }
   ],
   "events": [
@@ -126,11 +165,19 @@
       "id": 3
     },
     {
+<<<<<<< HEAD
       "userId": 7,
       "name": "Steve's Plant Party! Bring your own dirt.",
       "date": "2020-09-19",
       "location": "Steve's Place",
       "zipCode": "20001",
+=======
+      "userId": 8,
+      "name": "Party at Gabby's",
+      "date": "2020-09-17",
+      "location": "Ashville, NC",
+      "zipCode": "28803",
+>>>>>>> 1966dfb4368c774dac6d8f8508ad5eed57cf4ee2
       "id": 4
     }
   ],
@@ -171,6 +218,7 @@
       "id": 5
     },
     {
+<<<<<<< HEAD
       "userId": 7,
       "title": "Petunia Time!",
       "description": "Gotta plant those petunias.",
@@ -183,6 +231,13 @@
       "description": "It should look like a giraffe.",
       "date": "2020-08-30",
       "id": 7
+=======
+      "userId": 8,
+      "title": "Shameless Self promotion",
+      "description": "It's a moral dilemma!",
+      "date": "2020-09-02",
+      "id": 6
+>>>>>>> 1966dfb4368c774dac6d8f8508ad5eed57cf4ee2
     }
   ],
   "friends": [
