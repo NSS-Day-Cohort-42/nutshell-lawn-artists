@@ -1,4 +1,4 @@
-import { saveArticle, getArticles, editArticle, deleteArticle } from "./ArticleProvider.js";
+import { saveArticle, getArticles, editArticle, deleteArticle, useArticleById } from "./ArticleProvider.js";
 
 const eventHub = document.querySelector(".container")
 const popup = document.querySelector(".popup-container")
@@ -20,7 +20,9 @@ eventHub.addEventListener("click", e => {
       }
 
       saveArticle(newArticle)
-        .then(ArticleForm)
+      .then( () => {
+        popup.classList.remove("visible")
+      })
     }
     else {
       const updatedArticle = {
@@ -31,6 +33,10 @@ eventHub.addEventListener("click", e => {
       }
 
       editArticle(hiddenArticleId, updatedArticle)
+      .then( () => {
+        popup.classList.remove("visible")
+      })
+
     }
   }
   else if (e.target.classList.contains("btn-close-form")) {
@@ -53,14 +59,24 @@ export const ArticleForm = () => {
 eventHub.addEventListener("deleteArticleClicked", ce => {
   const articleId = ce.detail.articleId
   deleteArticle(articleId)
+  popup.classList.remove("visible")
 })
 eventHub.addEventListener("editArticleClicked", ce => {
+
   const articleId = ce.detail.articleId
   renderArticleForm(articleId)
   popup.innerHTML += `
     <button class="btn btn-delete-article" id="artDelete--${articleId}">
       Delete Article
     </button>`
+  const article = useArticleById(articleId)
+  const titleTarget = document.querySelector("#articleTitle")
+  const synopsisTarget = document.querySelector("#articleSynopsis")
+  const urlTarget = document.querySelector("#articleUrl")
+
+  titleTarget.value = article.title
+  synopsisTarget.value = article.synopsis
+  urlTarget.value = article.url
   popup.classList.add("visible")
 })
 
@@ -76,4 +92,5 @@ const renderArticleForm = (articleId) => {
       <button class="btn btn-close-form" id="closeForm">Cancel</button>
     </section>
     `
+  
 }
